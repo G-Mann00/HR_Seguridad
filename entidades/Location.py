@@ -1,6 +1,5 @@
 import copy
 
-
 class Location:
     def __init__(self, location_id=None, stree_address=None, postal_code=None, city=None, state_province=None, country_id=None):
         self._location_id = location_id
