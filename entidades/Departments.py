@@ -19,7 +19,6 @@ class Departments:
         u.id_department=u._id_department
         u.department_name=u.department_name
         u.location=u.location
-
         return u
 
     @property
