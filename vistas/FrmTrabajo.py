@@ -99,6 +99,7 @@ class Ui_FrmTrabajo(object):
         font.setWeight(75)
         self.le_id.setFont(font)
         self.le_id.setText("")
+        self.le_id.setReadOnly(True)
         self.le_id.setObjectName("le_id")
         self.lbl_identificador = QtWidgets.QLabel(self.gbox_datosTrabajo)
         self.lbl_identificador.setGeometry(QtCore.QRect(30, 40, 101, 17))
