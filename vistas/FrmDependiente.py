@@ -42,6 +42,7 @@ class Ui_FrmDependiente(object):
         font.setItalic(False)
         font.setWeight(50)
         self.le_id.setFont(font)
+        self.le_id.setReadOnly(True)
         self.le_id.setObjectName("le_id")
         self.lbl_nombre = QtWidgets.QLabel(self.gbox_datosDependiente)
         self.lbl_nombre.setGeometry(QtCore.QRect(30, 130, 101, 17))
