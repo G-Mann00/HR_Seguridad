@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmLocalizacion</class>
+ <widget class="QWidget" name="FrmLocalizacion">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1003</width>
+    <height>715</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión de localización</string>
+  </property>
+  <widget class="QGroupBox" name="gb_datosLocalizacion">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>961</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title">
+    <string>Datos de localización    </string>
+   </property>
+   <widget class="QLabel" name="lb_identificador">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Identificador:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_direccion">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dirección:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_pais">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pais:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_identificador">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>171</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_direccion">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>361</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmb_pais">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>361</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>-- Select --</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="lbl_estado">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Estado:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_estado">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>361</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_ciudad">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>50</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ciudad:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_ciudad">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>80</y>
+      <width>301</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_codigoPostal">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>130</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Codigo Postal:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_codigoPostal">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>160</y>
+      <width>301</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="le_buscar">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>440</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_buscar">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>440</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: Black;
+background-color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tbv_registrosLocalizacion">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>510</y>
+     <width>961</width>
+     <height>171</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_agregar">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: White;
+background-color:rgb(62, 206, 43)</string>
+   </property>
+   <property name="text">
+    <string>Agregar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_editar">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: White;
+background-color: rgb(28, 113, 216)</string>
+   </property>
+   <property name="text">
+    <string>Editar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_eliminar">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: White;
+background-color: rgb(192, 28, 40)</string>
+   </property>
+   <property name="text">
+    <string>Eliminar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_limpiar">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: Black;
+background-color:rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Limpiar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_filtro">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>440</y>
+     <width>51</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Filtro</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>440</y>
+     <width>141</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>-- Select --</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

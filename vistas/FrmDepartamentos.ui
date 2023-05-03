@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmDepartamentos</class>
+ <widget class="QWidget" name="FrmDepartamentos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>677</width>
+    <height>676</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestión de departamentos</string>
+  </property>
+  <widget class="QGroupBox" name="gb_datosDepartamento">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>631</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title">
+    <string>Datos del departamento  </string>
+   </property>
+   <widget class="QLabel" name="lbl_identificador">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Identificador:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_nombre">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nombre:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_localizacion">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Localización:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_identificador">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>291</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_nombre">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>361</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbx_localizacion">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>291</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>-- Select --</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="btn_limpiar">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>50</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: Black;
+background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Limpiar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_agregar">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>110</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color:rgb(62, 206, 43)</string>
+    </property>
+    <property name="text">
+     <string>Agregar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_editar">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>170</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color: rgb(28, 113, 216)</string>
+    </property>
+    <property name="text">
+     <string>Editar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eliminar">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>230</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color: rgb(192, 28, 40)</string>
+    </property>
+    <property name="text">
+     <string>Eliminar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="le_buscador">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>420</y>
+     <width>431</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_buscar">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>420</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: Black;
+background-color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tv_departamento">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>470</y>
+     <width>631</width>
+     <height>171</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
