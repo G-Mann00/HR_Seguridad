@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmPrincipal</class>
+ <widget class="QMainWindow" name="FrmPrincipal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1303</width>
+    <height>906</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Principal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lbl_logo">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>197</y>
+      <width>642</width>
+      <height>512</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/HR512.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1303</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEmpleados">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Recursos Humanos</string>
+    </property>
+    <addaction name="btn_gestionTrabajos"/>
+    <addaction name="Btn_gestionEmpleados"/>
+    <addaction name="btn_gestionDependientes"/>
+    <addaction name="btn_gestionDepartamentos"/>
+    <addaction name="btn_gestionLocalizacion"/>
+    <addaction name="btn_gestionPais"/>
+    <addaction name="btn_gestionRegion"/>
+   </widget>
+   <widget class="QMenu" name="menuSeguridad">
+    <property name="title">
+     <string>Seguridad</string>
+    </property>
+    <addaction name="btn_gestionUsuario"/>
+    <addaction name="btn_gestionRol"/>
+    <addaction name="btn_asignarRol"/>
+    <addaction name="btn_asignarFuncionesRol"/>
+   </widget>
+   <addaction name="menuEmpleados"/>
+   <addaction name="menuSeguridad"/>
+  </widget>
+  <action name="btn_gestionTrabajos">
+   <property name="text">
+    <string>Gestión Trabajos</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="Btn_gestionEmpleados">
+   <property name="text">
+    <string>Gestión Empleados</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionDepartamentos">
+   <property name="text">
+    <string>Gestión Departamentos</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionLocalizacion">
+   <property name="text">
+    <string>Gestión Localización </string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionPais">
+   <property name="text">
+    <string>Gestión Pais</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionRegion">
+   <property name="text">
+    <string>Gestión región</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionDependientes">
+   <property name="text">
+    <string>Gestión Dependientes</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionUsuario">
+   <property name="text">
+    <string>Gestión Usuario</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_gestionRol">
+   <property name="text">
+    <string>Gestión Rol</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_asignarRol">
+   <property name="text">
+    <string>Asignar Rol</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="btn_asignarFuncionesRol">
+   <property name="text">
+    <string>Asignar Funciones al rol</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../recursos/LogoPrincipal.qrc"/>
+ </resources>
+ <connections/>
+</ui>
