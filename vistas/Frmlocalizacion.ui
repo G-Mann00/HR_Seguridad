@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1003</width>
-    <height>715</height>
+    <width>740</width>
+    <height>776</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>740</width>
+    <height>776</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Gestión de localización</string>
@@ -17,60 +23,48 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>961</width>
-     <height>361</height>
+     <y>20</y>
+     <width>691</width>
+     <height>481</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
     </font>
    </property>
    <property name="title">
-    <string>Datos de localización    </string>
+    <string>Datos de Localización    </string>
    </property>
    <widget class="QLabel" name="lb_identificador">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>50</y>
-      <width>101</width>
+      <width>121</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
      <string>Identificador:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_direccion">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>130</y>
-      <width>81</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Dirección:</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="lbl_pais">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>280</y>
+      <y>120</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -78,10 +72,13 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Pais:</string>
+     <string>País:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="le_identificador">
@@ -89,32 +86,38 @@
      <rect>
       <x>30</x>
       <y>80</y>
-      <width>171</width>
+      <width>161</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="le_direccion">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>160</y>
-      <width>361</width>
-      <height>51</height>
-     </rect>
     </property>
    </widget>
    <widget class="QComboBox" name="cmb_pais">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>300</y>
-      <width>361</width>
+      <y>140</y>
+      <width>301</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -125,39 +128,29 @@
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="lbl_estado">
+   <widget class="QLineEdit" name="le_estado">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>220</y>
-      <width>81</width>
-      <height>17</height>
+      <y>200</y>
+      <width>301</width>
+      <height>25</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
-    </property>
-    <property name="text">
-     <string>Estado:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="le_estado">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>250</y>
-      <width>361</width>
-      <height>25</height>
-     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_ciudad">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>50</y>
+      <x>30</x>
+      <y>240</y>
       <width>81</width>
       <height>17</height>
      </rect>
@@ -165,6 +158,9 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -174,18 +170,26 @@
    <widget class="QLineEdit" name="le_ciudad">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>80</y>
+      <x>30</x>
+      <y>260</y>
       <width>301</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_codigoPostal">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>130</y>
+      <x>30</x>
+      <y>300</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -193,6 +197,9 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -202,126 +209,252 @@
    <widget class="QLineEdit" name="le_codigoPostal">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>160</y>
+      <x>30</x>
+      <y>320</y>
       <width>301</width>
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
    </widget>
-  </widget>
-  <widget class="QLineEdit" name="le_buscar">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>440</y>
-     <width>441</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_buscar">
-   <property name="geometry">
-    <rect>
-     <x>750</x>
-     <y>440</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: Black;
-background-color: rgb(255, 255, 255)</string>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
-   </property>
+   <widget class="QLabel" name="lbl_direccion_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>360</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dirección:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_estado_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Estado:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_agregar">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>100</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Crea un nuevo registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color:rgb(7,125,8)</string>
+    </property>
+    <property name="text">
+     <string>Agregar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eliminar">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>220</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Elimina un registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color: rgb(201,0,0)</string>
+    </property>
+    <property name="text">
+     <string>Eliminar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_editar">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>160</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Edita un registro ya existente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: White;
+background-color: rgb(12,91,166)</string>
+    </property>
+    <property name="text">
+     <string>Editar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/edit40.png</normaloff>:/iconosCrud/edit40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_limpiar">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>40</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Limpia los campos del formulario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: Black;
+background-color:white
+</string>
+    </property>
+    <property name="text">
+     <string>Nuevo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/clean40.png</normaloff>:/iconosCrud/clean40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>380</y>
+      <width>301</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+   </widget>
   </widget>
   <widget class="QTableView" name="tbv_registrosLocalizacion">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>510</y>
-     <width>961</width>
+     <x>10</x>
+     <y>570</y>
+     <width>701</width>
      <height>171</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_agregar">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>40</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: White;
-background-color:rgb(62, 206, 43)</string>
-   </property>
-   <property name="text">
-    <string>Agregar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_editar">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>40</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: White;
-background-color: rgb(28, 113, 216)</string>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_eliminar">
-   <property name="geometry">
-    <rect>
-     <x>890</x>
-     <y>40</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: White;
-background-color: rgb(192, 28, 40)</string>
-   </property>
-   <property name="text">
-    <string>Eliminar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_limpiar">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>40</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: Black;
-background-color:rgb(255, 255, 255)</string>
-   </property>
-   <property name="text">
-    <string>Limpiar</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_filtro">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>440</y>
-     <width>51</width>
-     <height>17</height>
+     <x>20</x>
+     <y>535</y>
+     <width>40</width>
+     <height>19</height>
     </rect>
    </property>
    <property name="font">
@@ -333,14 +466,19 @@ background-color:rgb(255, 255, 255)</string>
     <string>Filtro</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="cbx_filtro">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>440</y>
-     <width>141</width>
+     <x>70</x>
+     <y>530</y>
+     <width>111</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="toolTip">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -351,7 +489,74 @@ background-color:rgb(255, 255, 255)</string>
     </property>
    </item>
   </widget>
+  <widget class="QLineEdit" name="le_buscar">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>530</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_buscar">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: Black;
+background-color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../recursos/iconosBotones.qrc">
+     <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>btn_limpiar</tabstop>
+  <tabstop>btn_agregar</tabstop>
+  <tabstop>btn_editar</tabstop>
+  <tabstop>btn_eliminar</tabstop>
+  <tabstop>le_identificador</tabstop>
+  <tabstop>cmb_pais</tabstop>
+  <tabstop>le_estado</tabstop>
+  <tabstop>le_ciudad</tabstop>
+  <tabstop>le_codigoPostal</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>cbx_filtro</tabstop>
+  <tabstop>le_buscar</tabstop>
+  <tabstop>btn_buscar</tabstop>
+  <tabstop>tbv_registrosLocalizacion</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../recursos/iconosBotones.qrc"/>
+ </resources>
  <connections/>
 </ui>
