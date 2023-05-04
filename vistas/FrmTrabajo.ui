@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>677</height>
+    <height>665</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>800</width>
-    <height>677</height>
+    <height>665</height>
    </size>
   </property>
   <property name="font">
@@ -33,10 +33,10 @@
   <widget class="QGroupBox" name="gbox_datosTrabajo">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>761</width>
-     <height>301</height>
+     <x>30</x>
+     <y>30</y>
+     <width>741</width>
+     <height>281</height>
     </rect>
    </property>
    <property name="font">
@@ -53,13 +53,13 @@
    <property name="title">
     <string>Datos del Trabajo </string>
    </property>
-   <widget class="QPushButton" name="btn_limpiar">
+   <widget class="QPushButton" name="btn_nuevo">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>600</x>
       <y>40</y>
-      <width>101</width>
-      <height>41</height>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -70,12 +70,24 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Limpia los campos del formulario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
-     <string notr="true">border-style:outset;
-background-color:white</string>
+     <string notr="true">background-color:white</string>
     </property>
     <property name="text">
-     <string>Limpiar</string>
+     <string>Nuevo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/clean40.png</normaloff>:/iconosCrud/clean40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
    <widget class="QLineEdit" name="le_salarioMax">
@@ -90,9 +102,9 @@ background-color:white</string>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
+      <weight>50</weight>
       <italic>false</italic>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -111,9 +123,9 @@ background-color:white</string>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
+      <weight>50</weight>
       <italic>false</italic>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -153,9 +165,9 @@ background-color:white</string>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
+      <weight>50</weight>
       <italic>false</italic>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -195,9 +207,9 @@ background-color:white</string>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
+      <weight>50</weight>
       <italic>false</italic>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -246,16 +258,16 @@ background-color:white</string>
      </font>
     </property>
     <property name="text">
-     <string>Salario Minimo</string>
+     <string>Salario Mínimo</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_agregar">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>100</y>
-      <width>101</width>
-      <height>41</height>
+      <x>600</x>
+      <y>90</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -266,22 +278,34 @@ background-color:white</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Crea un nuevo registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">color:white;
-background-color:rgb(76, 154, 42);
-border-style: outset</string>
+background-color:rgb(7, 125, 8)</string>
     </property>
     <property name="text">
      <string>Agregar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_editar">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>160</y>
-      <width>101</width>
-      <height>41</height>
+      <x>600</x>
+      <y>140</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -292,22 +316,34 @@ border-style: outset</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Edita un registro ya existente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">color:white;
-background-color:rgb(53, 132, 228);
-border-style: outset</string>
+background-color:rgb(12, 91, 166)</string>
     </property>
     <property name="text">
      <string>Editar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/edit40.png</normaloff>:/iconosCrud/edit40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_eliminar">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>220</y>
-      <width>101</width>
-      <height>41</height>
+      <x>600</x>
+      <y>190</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -318,21 +354,33 @@ border-style: outset</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Elimina un registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">color:white;
-background-color:rgb(237, 51, 59);
-border-style: outset</string>
+background-color:rgb(201, 0, 0)</string>
     </property>
     <property name="text">
      <string>Eliminar</string>
     </property>
+    <property name="icon">
+     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
    </widget>
   </widget>
-  <widget class="QTableView" name="tbw_registrosTrabajos">
+  <widget class="QTableView" name="tv_registrosTrabajos">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>390</y>
+     <y>380</y>
      <width>681</width>
      <height>261</height>
     </rect>
@@ -348,7 +396,7 @@ border-style: outset</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>340</y>
+     <y>330</y>
      <width>541</width>
      <height>31</height>
     </rect>
@@ -367,7 +415,7 @@ border-style: outset</string>
    <property name="geometry">
     <rect>
      <x>630</x>
-     <y>340</y>
+     <y>330</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -386,10 +434,14 @@ border-style: outset</string>
    <property name="text">
     <string>Buscar</string>
    </property>
+   <property name="icon">
+    <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
+   </property>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>btn_limpiar</tabstop>
+  <tabstop>btn_nuevo</tabstop>
   <tabstop>btn_agregar</tabstop>
   <tabstop>btn_editar</tabstop>
   <tabstop>btn_eliminar</tabstop>
@@ -399,8 +451,10 @@ border-style: outset</string>
   <tabstop>le_salarioMax</tabstop>
   <tabstop>le_buscador</tabstop>
   <tabstop>btn_buscar</tabstop>
-  <tabstop>tbw_registrosTrabajos</tabstop>
+  <tabstop>tv_registrosTrabajos</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc"/>
+ </resources>
  <connections/>
 </ui>
