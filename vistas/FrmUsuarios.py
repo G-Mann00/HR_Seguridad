@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_Form(object):
@@ -288,7 +289,6 @@ class Ui_Form(object):
         self.lbl_filtro.setText(_translate("Form", "Filtro:"))
         self.cbx_filtro.setItemText(0, _translate("Form", "-- Seleccionar --"))
         self.btn_buscar.setText(_translate("Form", "Buscar"))
-import iconosBotones_rc
 
 
 if __name__ == "__main__":

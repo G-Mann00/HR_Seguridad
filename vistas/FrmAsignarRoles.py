@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmAsignarRoles(object):
@@ -141,7 +142,7 @@ class Ui_FrmAsignarRoles(object):
         self.btn_eliminar.setToolTip(_translate("FrmAsignarRoles", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un rol que este asignado a un usuario</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmAsignarRoles", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmAsignarRoles", "Buscar"))
-import iconosBotones_rc
+
 
 
 if __name__ == "__main__":

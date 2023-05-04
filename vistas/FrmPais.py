@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmPais(object):
@@ -199,7 +200,6 @@ class Ui_FrmPais(object):
         self.btn_eliminar.setToolTip(_translate("FrmPais", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un registro</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmPais", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmPais", "Buscar"))
-import iconosBotones_rc
 
 
 if __name__ == "__main__":

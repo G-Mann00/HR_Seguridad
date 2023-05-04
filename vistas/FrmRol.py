@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmRol(object):
@@ -206,7 +207,6 @@ class Ui_FrmRol(object):
         self.btn_eliminar.setToolTip(_translate("FrmRol", "<html><head/><body><p><a name=\"docs-internal-guid-bab997e6-7fff-9ebb-1345-25d89d2521de\"/><span style=\" font-family:\'Arial\'; font-weight:400; color:#000000; background-color:transparent;\">E</span><span style=\" font-family:\'Arial\'; font-weight:400; color:#000000; background-color:transparent;\">limina un registro</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmRol", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmRol", "Buscar"))
-import iconosBotones_rc
 
 
 if __name__ == "__main__":
