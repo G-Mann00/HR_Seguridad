@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>677</width>
-    <height>676</height>
+    <height>614</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>677</width>
+    <height>614</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Gestión de departamentos</string>
@@ -17,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>80</y>
+     <y>20</y>
      <width>631</width>
      <height>311</height>
     </rect>
@@ -25,23 +31,29 @@
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
     </font>
    </property>
    <property name="title">
-    <string>Datos del departamento  </string>
+    <string>Datos del Departamento  </string>
    </property>
    <widget class="QLabel" name="lbl_identificador">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>50</y>
-      <width>101</width>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -60,6 +72,9 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -78,6 +93,9 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -93,6 +111,14 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
    </widget>
    <widget class="QLineEdit" name="le_nombre">
     <property name="geometry">
@@ -102,6 +128,14 @@
       <width>361</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
    </widget>
    <widget class="QComboBox" name="cbx_localizacion">
@@ -113,6 +147,14 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
@@ -122,72 +164,181 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="btn_limpiar">
+   <widget class="QPushButton" name="btn_eliminar">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>50</y>
-      <width>91</width>
+      <x>480</x>
+      <y>230</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>111</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;docs-internal-guid-bab997e6-7fff-9ebb-1345-25d89d2521de&quot;/&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:400; color:#000000; background-color:transparent;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:400; color:#000000; background-color:transparent;&quot;&gt;limina un registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: Black;
-background-color:rgb(255, 255, 255)</string>
+     <string notr="true">color: White;
+background-color: rgb(201,0,0)</string>
     </property>
     <property name="text">
-     <string>Limpiar</string>
+     <string>Eliminar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_agregar">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>480</x>
       <y>110</y>
-      <width>91</width>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>111</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:400; color:#000000; background-color:transparent;&quot;&gt;Crea un registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: White;
-background-color:rgb(62, 206, 43)</string>
+background-color:rgb(7,125,8)</string>
     </property>
     <property name="text">
      <string>Agregar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_editar">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>480</x>
       <y>170</y>
-      <width>91</width>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>111</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;docs-internal-guid-9f32f1a0-7fff-3aa2-c71f-d8139ac015ba&quot;/&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:400; color:#000000; background-color:transparent;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:400; color:#000000; background-color:transparent;&quot;&gt;dita un registro ya existente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: White;
-background-color: rgb(28, 113, 216)</string>
+background-color: rgb(12,91,166)</string>
     </property>
     <property name="text">
      <string>Editar</string>
     </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/edit40.png</normaloff>:/iconosCrud/edit40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
    </widget>
-   <widget class="QPushButton" name="btn_eliminar">
+   <widget class="QPushButton" name="btn_limpiar">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>230</y>
-      <width>91</width>
+      <x>480</x>
+      <y>50</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>111</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Limpia los campos del formulario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: White;
-background-color: rgb(192, 28, 40)</string>
+     <string notr="true">color: Black;
+background-color:white
+</string>
     </property>
     <property name="text">
-     <string>Eliminar</string>
+     <string>Nuevo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../recursos/iconosBotones.qrc">
+      <normaloff>:/iconosCrud/clean40.png</normaloff>:/iconosCrud/clean40.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
     </property>
    </widget>
   </widget>
@@ -195,9 +346,24 @@ background-color: rgb(192, 28, 40)</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>420</y>
+     <y>350</y>
      <width>431</width>
      <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tv_departamento">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>631</width>
+     <height>171</height>
     </rect>
    </property>
   </widget>
@@ -205,10 +371,17 @@ background-color: rgb(192, 28, 40)</string>
    <property name="geometry">
     <rect>
      <x>510</x>
-     <y>420</y>
-     <width>91</width>
+     <y>350</y>
+     <width>111</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: Black;
@@ -217,18 +390,27 @@ background-color: rgb(255, 255, 255)</string>
    <property name="text">
     <string>Buscar</string>
    </property>
-  </widget>
-  <widget class="QTableView" name="tv_departamento">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>470</y>
-     <width>631</width>
-     <height>171</height>
-    </rect>
+   <property name="icon">
+    <iconset resource="../recursos/iconosBotones.qrc">
+     <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
    </property>
   </widget>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>le_identificador</tabstop>
+  <tabstop>le_nombre</tabstop>
+  <tabstop>cbx_localizacion</tabstop>
+  <tabstop>le_buscador</tabstop>
+  <tabstop>tv_departamento</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../recursos/iconosBotones.qrc"/>
+ </resources>
  <connections/>
 </ui>
