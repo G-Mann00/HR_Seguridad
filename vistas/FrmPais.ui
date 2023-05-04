@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>677</width>
-    <height>633</height>
+    <height>613</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>677</width>
+    <height>613</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Gestión de pais</string>
@@ -26,18 +32,19 @@
     <font>
      <pointsize>12</pointsize>
      <weight>75</weight>
+     <italic>true</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="title">
-    <string>Datos del pais  </string>
+    <string>Datos del País  </string>
    </property>
    <widget class="QLabel" name="lbl_identificador">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>50</y>
-      <width>101</width>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
@@ -45,6 +52,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -65,6 +73,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -85,6 +94,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -105,6 +115,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>50</weight>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -125,6 +136,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>50</weight>
+      <italic>true</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -137,6 +149,14 @@
       <width>291</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -160,8 +180,12 @@
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Limpia los campos del formulario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: Black;
@@ -195,8 +219,12 @@ background-color:white
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Crea un nuevo registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: White;
@@ -229,8 +257,12 @@ background-color:rgb(7,125,8)</string>
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Edita un registro ya existente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: White;
@@ -263,8 +295,12 @@ background-color: rgb(12,91,166)</string>
      <font>
       <pointsize>12</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Elimina un registro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: White;
