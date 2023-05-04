@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="iconosCrud">
+    <file>search40.png</file>
+    <file>add40.png</file>
+    <file>delete40.png</file>
+    <file>edit40.png</file>
+    <file>clean40.png</file>
+  </qresource>
+</RCC>
