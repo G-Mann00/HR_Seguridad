@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmDepartamentos(object):
@@ -60,6 +61,7 @@ class Ui_FrmDepartamentos(object):
         font.setItalic(False)
         font.setWeight(50)
         self.le_identificador.setFont(font)
+        self.le_identificador.setReadOnly(True)
         self.le_identificador.setObjectName("le_identificador")
         self.le_nombre = QtWidgets.QLineEdit(self.gb_datosDepartamento)
         self.le_nombre.setGeometry(QtCore.QRect(30, 160, 361, 25))
@@ -194,7 +196,6 @@ class Ui_FrmDepartamentos(object):
         self.btn_limpiar.setToolTip(_translate("FrmDepartamentos", "<html><head/><body><p><span style=\" font-weight:400;\">Limpia los campos del formulario</span></p></body></html>"))
         self.btn_limpiar.setText(_translate("FrmDepartamentos", "Nuevo"))
         self.btn_buscar.setText(_translate("FrmDepartamentos", "Buscar"))
-import iconosBotones_rc
 
 
 if __name__ == "__main__":

@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
+
 
 
 class Ui_FrmAsignarFunciones(object):
@@ -249,7 +251,7 @@ class Ui_FrmAsignarFunciones(object):
         self.btn_seleccionarTodos.setText(_translate("FrmAsignarFunciones", "Seleccionar Todos"))
         self.btn_quitarTodos.setToolTip(_translate("FrmAsignarFunciones", "<html><head/><body><p><br/></p></body></html>"))
         self.btn_quitarTodos.setText(_translate("FrmAsignarFunciones", "Quitar Todos"))
-import iconosBotones_rc
+
 
 
 if __name__ == "__main__":

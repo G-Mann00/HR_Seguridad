@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmEmpleado(object):
@@ -325,7 +326,7 @@ class Ui_FrmEmpleado(object):
         self.btn_agregar.setToolTip(_translate("FrmEmpleado", "<html><head/><body><p><span style=\" font-weight:400;\">Crea un nuevo registro</span></p></body></html>"))
         self.btn_agregar.setText(_translate("FrmEmpleado", "Agregar"))
         self.btn_buscar.setText(_translate("FrmEmpleado", "Buscar"))
-import iconosBotones_rc
+
 
 
 if __name__ == "__main__":

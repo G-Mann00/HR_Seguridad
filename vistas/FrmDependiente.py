@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmDependiente(object):
@@ -229,7 +230,6 @@ class Ui_FrmDependiente(object):
         self.btn_nuevo.setToolTip(_translate("FrmDependiente", "<html><head/><body><p><span style=\" font-weight:400;\">Limpia los campos del formulario</span></p></body></html>"))
         self.btn_nuevo.setText(_translate("FrmDependiente", "Nuevo"))
         self.btn_buscar.setText(_translate("FrmDependiente", "Buscar"))
-import iconosBotones_rc
 
 
 if __name__ == "__main__":

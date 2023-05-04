@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from recursos import iconosBotones_rc
 
 
 class Ui_FrmLocalizacion(object):
@@ -273,7 +274,7 @@ class Ui_FrmLocalizacion(object):
         self.cbx_filtro.setToolTip(_translate("FrmLocalizacion", "<html><head/><body><p>Select</p><p><br/></p></body></html>"))
         self.cbx_filtro.setItemText(0, _translate("FrmLocalizacion", "-- Select --"))
         self.btn_buscar.setText(_translate("FrmLocalizacion", "Buscar"))
-import iconosBotones_rc
+
 
 
 if __name__ == "__main__":
