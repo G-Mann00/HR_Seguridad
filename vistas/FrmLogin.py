@@ -1,8 +1,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from recursos import LogoHR_rc
-from FrmPrincipal import Ui_FrmPrincipal
-from controlador.CtrlFrmLogin import CtrlFrmLogin
+from vistas.FrmPrincipal import Ui_FrmPrincipal
+#from controlador.CtrlFrmLogin import CtrlFrmLogin
 
 class Ui_FrmLogin(object):
     def setupUi(self, FrmLogin):
@@ -11,7 +11,7 @@ class Ui_FrmLogin(object):
         FrmLogin.setMaximumSize(QtCore.QSize(380, 345))
         icon = QtGui.QIcon.fromTheme("HR")
         FrmLogin.setWindowIcon(icon)
-        self.centrar()
+        #self.centrar()
         self.centralwidget = QtWidgets.QWidget(FrmLogin)
         self.centralwidget.setObjectName("centralwidget")
         self.le_usuario = QtWidgets.QLineEdit(self.centralwidget)
@@ -32,7 +32,7 @@ class Ui_FrmLogin(object):
         self.lbl_logo.setObjectName("lbl_logo")
 
         #Eventos
-        self.btn_entrar.clicked.connect(self.btnEntrarClicked)
+        #self.btn_entrar.clicked.connect(self.btnEntrarClicked)
 
 
         FrmLogin.setCentralWidget(self.centralwidget)
@@ -60,14 +60,14 @@ class Ui_FrmLogin(object):
         y = (screen_geometry.height() - login_geometry.height()) //2
         FrmLogin.move(x, y)
 
-    def btnEntrarClicked(self):
-        self.frm_login = CtrlFrmLogin()
-        self.frm_login.validarCredenciales()
-        self.frm_principal = QtWidgets.QMainWindow()
-        self.uiA = Ui_FrmPrincipal()
-        self.uiA.setupUi(self.frm_principal)
-        self.frm_principal.show()
-        FrmLogin.hide()
+    #def btnEntrarClicked(self):
+        #self.frm_login = CtrlFrmLogin()
+        #self.frm_login.validarCredenciales()
+        #self.frm_principal = QtWidgets.QMainWindow()
+        #self.uiA = Ui_FrmPrincipal()
+        #self.uiA.setupUi(self.frm_principal)
+        #self.frm_principal.show()
+        #FrmLogin.hide()
 
 if __name__ == "__main__":
     import sys
