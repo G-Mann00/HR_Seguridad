@@ -228,11 +228,17 @@ class Ui_FrmDependiente(object):
 
         self.retranslateUi(FrmDependiente)
         QtCore.QMetaObject.connectSlotsByName(FrmDependiente)
+        FrmDependiente.setTabOrder(self.btn_nuevo, self.btn_agregar)
+        FrmDependiente.setTabOrder(self.btn_agregar, self.btn_editar)
+        FrmDependiente.setTabOrder(self.btn_editar, self.btn_eliminar)
+        FrmDependiente.setTabOrder(self.btn_eliminar, self.le_id)
         FrmDependiente.setTabOrder(self.le_id, self.le_primerNombre)
         FrmDependiente.setTabOrder(self.le_primerNombre, self.le_ultimoNombre)
         FrmDependiente.setTabOrder(self.le_ultimoNombre, self.le_relacion)
         FrmDependiente.setTabOrder(self.le_relacion, self.cbx_empleado)
         FrmDependiente.setTabOrder(self.cbx_empleado, self.le_buscador)
+        FrmDependiente.setTabOrder(self.le_buscador, self.btn_buscar)
+        FrmDependiente.setTabOrder(self.btn_buscar, self.tw_registrosDependiente)
 
     def retranslateUi(self, FrmDependiente):
         _translate = QtCore.QCoreApplication.translate

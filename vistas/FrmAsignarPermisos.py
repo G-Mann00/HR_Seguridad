@@ -117,7 +117,10 @@ class Ui_FrmAsignarPermisos(object):
         self.retranslateUi(FrmAsignarPermisos)
         QtCore.QMetaObject.connectSlotsByName(FrmAsignarPermisos)
         FrmAsignarPermisos.setTabOrder(self.btn_guardar, self.cbx_rol)
-        FrmAsignarPermisos.setTabOrder(self.cbx_rol, self.cb_guardar)
+        FrmAsignarPermisos.setTabOrder(self.cbx_rol, self.cbx_opcion)
+        FrmAsignarPermisos.setTabOrder(self.cbx_opcion, self.cb_guardar)
+        FrmAsignarPermisos.setTabOrder(self.cb_guardar, self.cb_editar)
+        FrmAsignarPermisos.setTabOrder(self.cb_editar, self.cb_eliminar)
 
     def retranslateUi(self, FrmAsignarPermisos):
         _translate = QtCore.QCoreApplication.translate
