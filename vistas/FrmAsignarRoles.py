@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
 
 
 class Ui_FrmAsignarRoles(object):
@@ -105,14 +105,6 @@ class Ui_FrmAsignarRoles(object):
         icon2.addPixmap(QtGui.QPixmap(":/iconosCrud/search40.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_buscar.setIcon(icon2)
         self.btn_buscar.setObjectName("btn_buscar")
-        self.tv_registrosUsuarioRol = QtWidgets.QTableView(FrmAsignarRoles)
-        self.tv_registrosUsuarioRol.setGeometry(QtCore.QRect(60, 320, 681, 221))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.tv_registrosUsuarioRol.setFont(font)
-        self.tv_registrosUsuarioRol.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosUsuarioRol.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosUsuarioRol.setObjectName("tv_registrosUsuarioRol")
         self.le_buscador = QtWidgets.QLineEdit(FrmAsignarRoles)
         self.le_buscador.setGeometry(QtCore.QRect(60, 270, 541, 31))
         font = QtGui.QFont()
@@ -121,6 +113,22 @@ class Ui_FrmAsignarRoles(object):
         self.le_buscador.setFont(font)
         self.le_buscador.setText("")
         self.le_buscador.setObjectName("le_buscador")
+        self.tw_registrosUsuarioRol = QtWidgets.QTableWidget(FrmAsignarRoles)
+        self.tw_registrosUsuarioRol.setGeometry(QtCore.QRect(130, 330, 531, 221))
+        self.tw_registrosUsuarioRol.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registrosUsuarioRol.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tw_registrosUsuarioRol.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registrosUsuarioRol.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registrosUsuarioRol.setObjectName("tw_registrosUsuarioRol")
+        self.tw_registrosUsuarioRol.setColumnCount(2)
+        self.tw_registrosUsuarioRol.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosUsuarioRol.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosUsuarioRol.setHorizontalHeaderItem(1, item)
+        self.tw_registrosUsuarioRol.horizontalHeader().setCascadingSectionResizes(False)
+        self.tw_registrosUsuarioRol.horizontalHeader().setDefaultSectionSize(264)
+        self.tw_registrosUsuarioRol.horizontalHeader().setStretchLastSection(True)
 
         self.retranslateUi(FrmAsignarRoles)
         QtCore.QMetaObject.connectSlotsByName(FrmAsignarRoles)
@@ -129,7 +137,6 @@ class Ui_FrmAsignarRoles(object):
         FrmAsignarRoles.setTabOrder(self.cbx_usuario, self.cbx_rol)
         FrmAsignarRoles.setTabOrder(self.cbx_rol, self.le_buscador)
         FrmAsignarRoles.setTabOrder(self.le_buscador, self.btn_buscar)
-        FrmAsignarRoles.setTabOrder(self.btn_buscar, self.tv_registrosUsuarioRol)
 
     def retranslateUi(self, FrmAsignarRoles):
         _translate = QtCore.QCoreApplication.translate
@@ -142,7 +149,10 @@ class Ui_FrmAsignarRoles(object):
         self.btn_eliminar.setToolTip(_translate("FrmAsignarRoles", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un rol que este asignado a un usuario</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmAsignarRoles", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmAsignarRoles", "Buscar"))
-
+        item = self.tw_registrosUsuarioRol.horizontalHeaderItem(0)
+        item.setText(_translate("FrmAsignarRoles", "Usuario"))
+        item = self.tw_registrosUsuarioRol.horizontalHeaderItem(1)
+        item.setText(_translate("FrmAsignarRoles", "Rol Asignado"))
 
 
 if __name__ == "__main__":

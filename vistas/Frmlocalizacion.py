@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
+
 
 class Ui_FrmLocalizacion(object):
     def setupUi(self, FrmLocalizacion):
@@ -305,7 +306,6 @@ class Ui_FrmLocalizacion(object):
         item.setText(_translate("FrmLocalizacion", "Codigo Postal"))
         item = self.tw_registroLocalizacion.horizontalHeaderItem(5)
         item.setText(_translate("FrmLocalizacion", "Dirección"))
-
 
 
 if __name__ == "__main__":

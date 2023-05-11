@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
+
 
 class Ui_FrmRegion(object):
     def setupUi(self, FrmRegion):

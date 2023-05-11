@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
 
 
 class Ui_FrmDependiente(object):
@@ -50,7 +50,7 @@ class Ui_FrmDependiente(object):
         self.le_id.setReadOnly(True)
         self.le_id.setObjectName("le_id")
         self.lbl_nombre = QtWidgets.QLabel(self.gb_datosDependiente)
-        self.lbl_nombre.setGeometry(QtCore.QRect(30, 130, 101, 17))
+        self.lbl_nombre.setGeometry(QtCore.QRect(30, 130, 121, 17))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -174,6 +174,15 @@ class Ui_FrmDependiente(object):
         self.btn_nuevo.setIcon(icon3)
         self.btn_nuevo.setIconSize(QtCore.QSize(20, 20))
         self.btn_nuevo.setObjectName("btn_nuevo")
+        self.lbl_apellido = QtWidgets.QLabel(self.gb_datosDependiente)
+        self.lbl_apellido.setGeometry(QtCore.QRect(220, 130, 121, 17))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.lbl_apellido.setFont(font)
+        self.lbl_apellido.setObjectName("lbl_apellido")
         self.le_buscador = QtWidgets.QLineEdit(FrmDependiente)
         self.le_buscador.setGeometry(QtCore.QRect(50, 410, 541, 31))
         font = QtGui.QFont()
@@ -182,14 +191,6 @@ class Ui_FrmDependiente(object):
         self.le_buscador.setFont(font)
         self.le_buscador.setText("")
         self.le_buscador.setObjectName("le_buscador")
-        self.tv_registrosDependientes = QtWidgets.QTableView(FrmDependiente)
-        self.tv_registrosDependientes.setGeometry(QtCore.QRect(50, 460, 681, 221))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.tv_registrosDependientes.setFont(font)
-        self.tv_registrosDependientes.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosDependientes.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosDependientes.setObjectName("tv_registrosDependientes")
         self.btn_buscar = QtWidgets.QPushButton(FrmDependiente)
         self.btn_buscar.setGeometry(QtCore.QRect(620, 410, 111, 31))
         font = QtGui.QFont()
@@ -203,6 +204,27 @@ class Ui_FrmDependiente(object):
         icon4.addPixmap(QtGui.QPixmap(":/iconosCrud/search40.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_buscar.setIcon(icon4)
         self.btn_buscar.setObjectName("btn_buscar")
+        self.tw_registrosDependiente = QtWidgets.QTableWidget(FrmDependiente)
+        self.tw_registrosDependiente.setGeometry(QtCore.QRect(30, 460, 741, 221))
+        self.tw_registrosDependiente.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registrosDependiente.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tw_registrosDependiente.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registrosDependiente.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registrosDependiente.setObjectName("tw_registrosDependiente")
+        self.tw_registrosDependiente.setColumnCount(5)
+        self.tw_registrosDependiente.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosDependiente.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosDependiente.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosDependiente.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosDependiente.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosDependiente.setHorizontalHeaderItem(4, item)
+        self.tw_registrosDependiente.horizontalHeader().setDefaultSectionSize(145)
+        self.tw_registrosDependiente.horizontalHeader().setStretchLastSection(True)
 
         self.retranslateUi(FrmDependiente)
         QtCore.QMetaObject.connectSlotsByName(FrmDependiente)
@@ -211,14 +233,13 @@ class Ui_FrmDependiente(object):
         FrmDependiente.setTabOrder(self.le_ultimoNombre, self.le_relacion)
         FrmDependiente.setTabOrder(self.le_relacion, self.cbx_empleado)
         FrmDependiente.setTabOrder(self.cbx_empleado, self.le_buscador)
-        FrmDependiente.setTabOrder(self.le_buscador, self.tv_registrosDependientes)
 
     def retranslateUi(self, FrmDependiente):
         _translate = QtCore.QCoreApplication.translate
         FrmDependiente.setWindowTitle(_translate("FrmDependiente", "Gestion de Dependientes"))
         self.gb_datosDependiente.setTitle(_translate("FrmDependiente", "Datos del Dependiente  "))
         self.lbl_identificador.setText(_translate("FrmDependiente", "Identificador"))
-        self.lbl_nombre.setText(_translate("FrmDependiente", "Nombre"))
+        self.lbl_nombre.setText(_translate("FrmDependiente", "Primer Nombre"))
         self.lbl_relacion.setText(_translate("FrmDependiente", "Relación"))
         self.lbl_empleado.setText(_translate("FrmDependiente", "Empleado"))
         self.btn_agregar.setToolTip(_translate("FrmDependiente", "<html><head/><body><p><span style=\" font-weight:400;\">Crea un nuevo registro</span></p></body></html>"))
@@ -229,7 +250,18 @@ class Ui_FrmDependiente(object):
         self.btn_eliminar.setText(_translate("FrmDependiente", "Eliminar"))
         self.btn_nuevo.setToolTip(_translate("FrmDependiente", "<html><head/><body><p><span style=\" font-weight:400;\">Limpia los campos del formulario</span></p></body></html>"))
         self.btn_nuevo.setText(_translate("FrmDependiente", "Nuevo"))
+        self.lbl_apellido.setText(_translate("FrmDependiente", "Primer Apellido"))
         self.btn_buscar.setText(_translate("FrmDependiente", "Buscar"))
+        item = self.tw_registrosDependiente.horizontalHeaderItem(0)
+        item.setText(_translate("FrmDependiente", "ID"))
+        item = self.tw_registrosDependiente.horizontalHeaderItem(1)
+        item.setText(_translate("FrmDependiente", "Primer Nombre"))
+        item = self.tw_registrosDependiente.horizontalHeaderItem(2)
+        item.setText(_translate("FrmDependiente", "Último Nombre"))
+        item = self.tw_registrosDependiente.horizontalHeaderItem(3)
+        item.setText(_translate("FrmDependiente", "Relación"))
+        item = self.tw_registrosDependiente.horizontalHeaderItem(4)
+        item.setText(_translate("FrmDependiente", "Empleado"))
 
 
 if __name__ == "__main__":
