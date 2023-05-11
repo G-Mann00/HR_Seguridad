@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from recursos import iconosBotones_rc
 
-
 class Ui_FrmPais(object):
     def setupUi(self, FrmPais):
         FrmPais.setObjectName("FrmPais")
@@ -163,12 +162,25 @@ class Ui_FrmPais(object):
         self.btn_buscar.setIcon(icon4)
         self.btn_buscar.setIconSize(QtCore.QSize(20, 20))
         self.btn_buscar.setObjectName("btn_buscar")
-        self.tbv_registroPais = QtWidgets.QTableView(FrmPais)
-        self.tbv_registroPais.setGeometry(QtCore.QRect(20, 410, 631, 171))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.tbv_registroPais.setFont(font)
-        self.tbv_registroPais.setObjectName("tbv_registroPais")
+        self.tw_registroPais = QtWidgets.QTableWidget(FrmPais)
+        self.tw_registroPais.setGeometry(QtCore.QRect(20, 400, 631, 192))
+        self.tw_registroPais.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registroPais.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registroPais.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registroPais.setObjectName("tw_registroPais")
+        self.tw_registroPais.setColumnCount(3)
+        self.tw_registroPais.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroPais.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroPais.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroPais.setHorizontalHeaderItem(2, item)
+        self.tw_registroPais.horizontalHeader().setVisible(True)
+        self.tw_registroPais.horizontalHeader().setCascadingSectionResizes(False)
+        self.tw_registroPais.horizontalHeader().setDefaultSectionSize(200)
+        self.tw_registroPais.horizontalHeader().setSortIndicatorShown(False)
+        self.tw_registroPais.horizontalHeader().setStretchLastSection(True)
 
         self.retranslateUi(FrmPais)
         QtCore.QMetaObject.connectSlotsByName(FrmPais)
@@ -180,7 +192,6 @@ class Ui_FrmPais(object):
         FrmPais.setTabOrder(self.le_nombre, self.cmb_region)
         FrmPais.setTabOrder(self.cmb_region, self.le_buscar)
         FrmPais.setTabOrder(self.le_buscar, self.btn_buscar)
-        FrmPais.setTabOrder(self.btn_buscar, self.tbv_registroPais)
 
     def retranslateUi(self, FrmPais):
         _translate = QtCore.QCoreApplication.translate
@@ -200,6 +211,13 @@ class Ui_FrmPais(object):
         self.btn_eliminar.setToolTip(_translate("FrmPais", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un registro</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmPais", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmPais", "Buscar"))
+        item = self.tw_registroPais.horizontalHeaderItem(0)
+        item.setText(_translate("FrmPais", "ID"))
+        item = self.tw_registroPais.horizontalHeaderItem(1)
+        item.setText(_translate("FrmPais", "Nombre"))
+        item = self.tw_registroPais.horizontalHeaderItem(2)
+        item.setText(_translate("FrmPais", "Región"))
+
 
 
 if __name__ == "__main__":

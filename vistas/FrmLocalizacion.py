@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from recursos import iconosBotones_rc
 
-
 class Ui_FrmLocalizacion(object):
     def setupUi(self, FrmLocalizacion):
         FrmLocalizacion.setObjectName("FrmLocalizacion")
@@ -197,9 +196,6 @@ class Ui_FrmLocalizacion(object):
         font.setWeight(50)
         self.textEdit.setFont(font)
         self.textEdit.setObjectName("textEdit")
-        self.tbv_registrosLocalizacion = QtWidgets.QTableView(FrmLocalizacion)
-        self.tbv_registrosLocalizacion.setGeometry(QtCore.QRect(10, 570, 701, 171))
-        self.tbv_registrosLocalizacion.setObjectName("tbv_registrosLocalizacion")
         self.lbl_filtro = QtWidgets.QLabel(FrmLocalizacion)
         self.lbl_filtro.setGeometry(QtCore.QRect(20, 535, 40, 19))
         font = QtGui.QFont()
@@ -233,6 +229,30 @@ class Ui_FrmLocalizacion(object):
         self.btn_buscar.setIcon(icon4)
         self.btn_buscar.setIconSize(QtCore.QSize(20, 20))
         self.btn_buscar.setObjectName("btn_buscar")
+        self.tw_registroLocalizacion = QtWidgets.QTableWidget(FrmLocalizacion)
+        self.tw_registroLocalizacion.setGeometry(QtCore.QRect(20, 570, 691, 181))
+        self.tw_registroLocalizacion.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registroLocalizacion.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registroLocalizacion.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registroLocalizacion.setObjectName("tw_registroLocalizacion")
+        self.tw_registroLocalizacion.setColumnCount(6)
+        self.tw_registroLocalizacion.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroLocalizacion.setHorizontalHeaderItem(5, item)
+        self.tw_registroLocalizacion.horizontalHeader().setCascadingSectionResizes(False)
+        self.tw_registroLocalizacion.horizontalHeader().setSortIndicatorShown(False)
+        self.tw_registroLocalizacion.horizontalHeader().setStretchLastSection(True)
+        self.tw_registroLocalizacion.verticalHeader().setCascadingSectionResizes(False)
 
         self.retranslateUi(FrmLocalizacion)
         QtCore.QMetaObject.connectSlotsByName(FrmLocalizacion)
@@ -248,7 +268,6 @@ class Ui_FrmLocalizacion(object):
         FrmLocalizacion.setTabOrder(self.textEdit, self.cbx_filtro)
         FrmLocalizacion.setTabOrder(self.cbx_filtro, self.le_buscar)
         FrmLocalizacion.setTabOrder(self.le_buscar, self.btn_buscar)
-        FrmLocalizacion.setTabOrder(self.btn_buscar, self.tbv_registrosLocalizacion)
 
     def retranslateUi(self, FrmLocalizacion):
         _translate = QtCore.QCoreApplication.translate
@@ -274,6 +293,18 @@ class Ui_FrmLocalizacion(object):
         self.cbx_filtro.setToolTip(_translate("FrmLocalizacion", "<html><head/><body><p>Select</p><p><br/></p></body></html>"))
         self.cbx_filtro.setItemText(0, _translate("FrmLocalizacion", "-- Select --"))
         self.btn_buscar.setText(_translate("FrmLocalizacion", "Buscar"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(0)
+        item.setText(_translate("FrmLocalizacion", "ID"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(1)
+        item.setText(_translate("FrmLocalizacion", "País"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(2)
+        item.setText(_translate("FrmLocalizacion", "Estado"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(3)
+        item.setText(_translate("FrmLocalizacion", "Ciudad"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(4)
+        item.setText(_translate("FrmLocalizacion", "Codigo Postal"))
+        item = self.tw_registroLocalizacion.horizontalHeaderItem(5)
+        item.setText(_translate("FrmLocalizacion", "Dirección"))
 
 
 
