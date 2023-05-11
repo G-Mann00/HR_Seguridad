@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
 
 
 class Ui_FrmTrabajo(object):
@@ -168,11 +168,6 @@ class Ui_FrmTrabajo(object):
         self.btn_eliminar.setIcon(icon3)
         self.btn_eliminar.setIconSize(QtCore.QSize(20, 20))
         self.btn_eliminar.setObjectName("btn_eliminar")
-        self.tv_registrosTrabajos = QtWidgets.QTableView(FrmTrabajo)
-        self.tv_registrosTrabajos.setGeometry(QtCore.QRect(60, 380, 681, 261))
-        self.tv_registrosTrabajos.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosTrabajos.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.tv_registrosTrabajos.setObjectName("tv_registrosTrabajos")
         self.le_buscador = QtWidgets.QLineEdit(FrmTrabajo)
         self.le_buscador.setGeometry(QtCore.QRect(60, 330, 541, 31))
         font = QtGui.QFont()
@@ -194,6 +189,31 @@ class Ui_FrmTrabajo(object):
         icon4.addPixmap(QtGui.QPixmap(":/iconosCrud/search40.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_buscar.setIcon(icon4)
         self.btn_buscar.setObjectName("btn_buscar")
+        self.tw_registrosTrabajo = QtWidgets.QTableWidget(FrmTrabajo)
+        self.tw_registrosTrabajo.setGeometry(QtCore.QRect(30, 380, 741, 251))
+        self.tw_registrosTrabajo.setMinimumSize(QtCore.QSize(741, 251))
+        self.tw_registrosTrabajo.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registrosTrabajo.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tw_registrosTrabajo.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registrosTrabajo.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registrosTrabajo.setWordWrap(True)
+        self.tw_registrosTrabajo.setObjectName("tw_registrosTrabajo")
+        self.tw_registrosTrabajo.setColumnCount(4)
+        self.tw_registrosTrabajo.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosTrabajo.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosTrabajo.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosTrabajo.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registrosTrabajo.setHorizontalHeaderItem(3, item)
+        self.tw_registrosTrabajo.horizontalHeader().setCascadingSectionResizes(True)
+        self.tw_registrosTrabajo.horizontalHeader().setDefaultSectionSize(150)
+        self.tw_registrosTrabajo.horizontalHeader().setMinimumSectionSize(100)
+        self.tw_registrosTrabajo.horizontalHeader().setSortIndicatorShown(False)
+        self.tw_registrosTrabajo.horizontalHeader().setStretchLastSection(True)
+        self.tw_registrosTrabajo.verticalHeader().setCascadingSectionResizes(True)
 
         self.retranslateUi(FrmTrabajo)
         QtCore.QMetaObject.connectSlotsByName(FrmTrabajo)
@@ -206,7 +226,6 @@ class Ui_FrmTrabajo(object):
         FrmTrabajo.setTabOrder(self.le_salarioMin, self.le_salarioMax)
         FrmTrabajo.setTabOrder(self.le_salarioMax, self.le_buscador)
         FrmTrabajo.setTabOrder(self.le_buscador, self.btn_buscar)
-        FrmTrabajo.setTabOrder(self.btn_buscar, self.tv_registrosTrabajos)
 
     def retranslateUi(self, FrmTrabajo):
         _translate = QtCore.QCoreApplication.translate
@@ -225,6 +244,15 @@ class Ui_FrmTrabajo(object):
         self.btn_eliminar.setToolTip(_translate("FrmTrabajo", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un registro</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmTrabajo", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmTrabajo", "Buscar"))
+        self.tw_registrosTrabajo.setSortingEnabled(False)
+        item = self.tw_registrosTrabajo.horizontalHeaderItem(0)
+        item.setText(_translate("FrmTrabajo", "ID"))
+        item = self.tw_registrosTrabajo.horizontalHeaderItem(1)
+        item.setText(_translate("FrmTrabajo", "Nombre"))
+        item = self.tw_registrosTrabajo.horizontalHeaderItem(2)
+        item.setText(_translate("FrmTrabajo", "Salario Mínimo"))
+        item = self.tw_registrosTrabajo.horizontalHeaderItem(3)
+        item.setText(_translate("FrmTrabajo", "Salario Maximo"))
 
 
 if __name__ == "__main__":

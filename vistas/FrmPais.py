@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from recursos import iconosBotones_rc
+from recursos import iconosApp_rc
+
 
 class Ui_FrmPais(object):
     def setupUi(self, FrmPais):
@@ -217,7 +218,6 @@ class Ui_FrmPais(object):
         item.setText(_translate("FrmPais", "Nombre"))
         item = self.tw_registroPais.horizontalHeaderItem(2)
         item.setText(_translate("FrmPais", "Región"))
-
 
 
 if __name__ == "__main__":
