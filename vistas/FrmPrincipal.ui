@@ -24,7 +24,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/HR512.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../recursos/iconosApp.qrc">:/logoPrincipal/HR512.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -203,7 +206,7 @@
   </action>
  </widget>
  <resources>
-  <include location="../recursos/LogoPrincipal.qrc"/>
+  <include location="../recursos/iconosApp.qrc"/>
  </resources>
  <connections/>
 </ui>

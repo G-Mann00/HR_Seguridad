@@ -80,7 +80,7 @@
      <string>Nuevo</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/clean40.png</normaloff>:/iconosCrud/clean40.png</iconset>
     </property>
     <property name="iconSize">
@@ -289,7 +289,7 @@ background-color:rgb(7, 125, 8)</string>
      <string>Agregar</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
     </property>
     <property name="iconSize">
@@ -327,7 +327,7 @@ background-color:rgb(12, 91, 166)</string>
      <string>Editar</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/edit40.png</normaloff>:/iconosCrud/edit40.png</iconset>
     </property>
     <property name="iconSize">
@@ -365,7 +365,7 @@ background-color:rgb(201, 0, 0)</string>
      <string>Eliminar</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
     </property>
     <property name="iconSize">
@@ -419,7 +419,7 @@ background-color:rgb(201, 0, 0)</string>
     <string>Buscar</string>
    </property>
    <property name="icon">
-    <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+    <iconset resource="../recursos/iconosApp.qrc">
      <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
    </property>
   </widget>
@@ -509,7 +509,7 @@ background-color:rgb(201, 0, 0)</string>
   <tabstop>btn_buscar</tabstop>
  </tabstops>
  <resources>
-  <include location="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc"/>
+  <include location="../recursos/iconosApp.qrc"/>
  </resources>
  <connections/>
 </ui>

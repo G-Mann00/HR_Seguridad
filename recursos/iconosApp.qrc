@@ -6,4 +6,10 @@
     <file>edit40.png</file>
     <file>clean40.png</file>
   </qresource>
+  <qresource prefix="logoLogin">
+    <file>HrLogo128.png</file>
+  </qresource>
+  <qresource prefix="logoPrincipal">
+    <file>HR512.png</file>
+  </qresource>
 </RCC>

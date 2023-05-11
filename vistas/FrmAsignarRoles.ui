@@ -145,7 +145,7 @@ background-color:rgb(7, 125, 8)</string>
      <string>Asignar</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
     </property>
     <property name="iconSize">
@@ -183,7 +183,7 @@ background-color:rgb(201, 0, 0)</string>
      <string>Eliminar</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
     </property>
     <property name="iconSize">
@@ -218,7 +218,7 @@ background-color:rgb(201, 0, 0)</string>
     <string>Buscar</string>
    </property>
    <property name="icon">
-    <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+    <iconset resource="../recursos/iconosApp.qrc">
      <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
    </property>
   </widget>
@@ -292,7 +292,7 @@ background-color:rgb(201, 0, 0)</string>
   <tabstop>btn_buscar</tabstop>
  </tabstops>
  <resources>
-  <include location="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc"/>
+  <include location="../recursos/iconosApp.qrc"/>
  </resources>
  <connections/>
 </ui>
