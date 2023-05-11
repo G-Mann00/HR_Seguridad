@@ -222,27 +222,6 @@ background-color:rgb(201, 0, 0)</string>
      <normaloff>:/iconosCrud/search40.png</normaloff>:/iconosCrud/search40.png</iconset>
    </property>
   </widget>
-  <widget class="QTableView" name="tv_registrosUsuarioRol">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>320</y>
-     <width>681</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="verticalScrollBarPolicy">
-    <enum>Qt::ScrollBarAsNeeded</enum>
-   </property>
-   <property name="horizontalScrollBarPolicy">
-    <enum>Qt::ScrollBarAsNeeded</enum>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="le_buscador">
    <property name="geometry">
     <rect>
@@ -262,6 +241,47 @@ background-color:rgb(201, 0, 0)</string>
     <string/>
    </property>
   </widget>
+  <widget class="QTableWidget" name="tw_registrosUsuarioRol">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>330</y>
+     <width>531</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>264</number>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Usuario</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Rol Asignado</string>
+    </property>
+   </column>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>btn_asignar</tabstop>
@@ -270,7 +290,6 @@ background-color:rgb(201, 0, 0)</string>
   <tabstop>cbx_rol</tabstop>
   <tabstop>le_buscador</tabstop>
   <tabstop>btn_buscar</tabstop>
-  <tabstop>tv_registrosUsuarioRol</tabstop>
  </tabstops>
  <resources>
   <include location="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc"/>
