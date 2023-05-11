@@ -439,10 +439,16 @@ background-color: rgb(255, 255, 255)</string>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>btn_limpiar</tabstop>
+  <tabstop>btn_agregar</tabstop>
+  <tabstop>btn_editar</tabstop>
+  <tabstop>btn_eliminar</tabstop>
   <tabstop>le_identificador</tabstop>
   <tabstop>le_nombre</tabstop>
   <tabstop>cbx_localizacion</tabstop>
   <tabstop>le_buscador</tabstop>
+  <tabstop>btn_buscar</tabstop>
+  <tabstop>tw_registroDepartamentos</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosApp.qrc"/>
