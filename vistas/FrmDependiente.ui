@@ -508,12 +508,18 @@ background-color:rgb(201, 0, 0)</string>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>btn_nuevo</tabstop>
+  <tabstop>btn_agregar</tabstop>
+  <tabstop>btn_editar</tabstop>
+  <tabstop>btn_eliminar</tabstop>
   <tabstop>le_id</tabstop>
   <tabstop>le_primerNombre</tabstop>
   <tabstop>le_ultimoNombre</tabstop>
   <tabstop>le_relacion</tabstop>
   <tabstop>cbx_empleado</tabstop>
   <tabstop>le_buscador</tabstop>
+  <tabstop>btn_buscar</tabstop>
+  <tabstop>tw_registrosDependiente</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosApp.qrc"/>

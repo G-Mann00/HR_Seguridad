@@ -244,7 +244,10 @@ background-color:rgb(7, 125, 8)</string>
  <tabstops>
   <tabstop>btn_guardar</tabstop>
   <tabstop>cbx_rol</tabstop>
+  <tabstop>cbx_opcion</tabstop>
   <tabstop>cb_guardar</tabstop>
+  <tabstop>cb_editar</tabstop>
+  <tabstop>cb_eliminar</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosApp.qrc"/>
