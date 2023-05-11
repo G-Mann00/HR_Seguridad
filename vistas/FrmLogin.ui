@@ -85,13 +85,16 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/HrLogo128.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../recursos/iconosApp.qrc">:/logoLogin/HrLogo128.png</pixmap>
     </property>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="../recursos/logoHR.qrc"/>
+  <include location="../recursos/iconosApp.qrc"/>
  </resources>
  <connections/>
 </ui>

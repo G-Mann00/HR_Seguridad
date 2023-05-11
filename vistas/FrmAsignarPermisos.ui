@@ -190,7 +190,7 @@ background-color:rgb(7, 125, 8)</string>
      <string>Guardar Permisos</string>
     </property>
     <property name="icon">
-     <iconset resource="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc">
+     <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
     </property>
     <property name="iconSize">
@@ -247,7 +247,7 @@ background-color:rgb(7, 125, 8)</string>
   <tabstop>cb_guardar</tabstop>
  </tabstops>
  <resources>
-  <include location="../PruebaClonar/HR_Seguridad/recursos/iconosBotones.qrc"/>
+  <include location="../recursos/iconosApp.qrc"/>
  </resources>
  <connections/>
 </ui>
