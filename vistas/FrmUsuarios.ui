@@ -720,13 +720,23 @@ background-color: rgb(255, 255, 255)</string>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>btn_limpiar</tabstop>
+  <tabstop>btn_agregar</tabstop>
+  <tabstop>btn_editar</tabstop>
+  <tabstop>btn_eliminar</tabstop>
   <tabstop>le_identificador</tabstop>
+  <tabstop>le_usuario_3</tabstop>
+  <tabstop>le_pwd_4</tabstop>
   <tabstop>le_pwd</tabstop>
   <tabstop>le_nombre</tabstop>
   <tabstop>le_apellido</tabstop>
   <tabstop>le_email</tabstop>
+  <tabstop>le_email_5</tabstop>
+  <tabstop>checkBox</tabstop>
   <tabstop>cbx_filtro</tabstop>
   <tabstop>le_filtro</tabstop>
+  <tabstop>btn_buscar</tabstop>
+  <tabstop>tw_registroUsuarios</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosApp.qrc"/>
