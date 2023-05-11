@@ -360,16 +360,6 @@ background-color:white
     </font>
    </property>
   </widget>
-  <widget class="QTableView" name="tv_departamento">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>631</width>
-     <height>171</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_buscar">
    <property name="geometry">
     <rect>
@@ -404,13 +394,55 @@ background-color: rgb(255, 255, 255)</string>
     </size>
    </property>
   </widget>
+  <widget class="QTableWidget" name="tw_registroDepartamentos">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>641</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>120</number>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Localización</string>
+    </property>
+   </column>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>le_identificador</tabstop>
   <tabstop>le_nombre</tabstop>
   <tabstop>cbx_localizacion</tabstop>
   <tabstop>le_buscador</tabstop>
-  <tabstop>tv_departamento</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosBotones.qrc"/>
