@@ -438,16 +438,6 @@ background-color:white
     </property>
    </widget>
   </widget>
-  <widget class="QTableView" name="tbv_registrosLocalizacion">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>570</y>
-     <width>701</width>
-     <height>171</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_filtro">
    <property name="geometry">
     <rect>
@@ -538,6 +528,67 @@ background-color: rgb(255, 255, 255)</string>
     </size>
    </property>
   </widget>
+  <widget class="QTableWidget" name="tw_registroLocalizacion">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>570</y>
+     <width>691</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>País</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Estado</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Ciudad</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Codigo Postal</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Dirección</string>
+    </property>
+   </column>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>btn_limpiar</tabstop>
@@ -553,7 +604,6 @@ background-color: rgb(255, 255, 255)</string>
   <tabstop>cbx_filtro</tabstop>
   <tabstop>le_buscar</tabstop>
   <tabstop>btn_buscar</tabstop>
-  <tabstop>tbv_registrosLocalizacion</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosBotones.qrc"/>

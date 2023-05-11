@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from recursos import iconosBotones_rc
 
-
 class Ui_FrmRegion(object):
     def setupUi(self, FrmRegion):
         FrmRegion.setObjectName("FrmRegion")
@@ -132,9 +131,6 @@ class Ui_FrmRegion(object):
         font.setPointSize(12)
         self.le_buscar.setFont(font)
         self.le_buscar.setObjectName("le_buscar")
-        self.tbv_registrosRegion = QtWidgets.QTableView(self.centralwidget)
-        self.tbv_registrosRegion.setGeometry(QtCore.QRect(20, 320, 631, 181))
-        self.tbv_registrosRegion.setObjectName("tbv_registrosRegion")
         self.btn_buscar = QtWidgets.QPushButton(self.centralwidget)
         self.btn_buscar.setGeometry(QtCore.QRect(510, 270, 111, 31))
         font = QtGui.QFont()
@@ -149,6 +145,20 @@ class Ui_FrmRegion(object):
         self.btn_buscar.setIcon(icon4)
         self.btn_buscar.setIconSize(QtCore.QSize(20, 20))
         self.btn_buscar.setObjectName("btn_buscar")
+        self.tw_registroRegion = QtWidgets.QTableWidget(self.centralwidget)
+        self.tw_registroRegion.setGeometry(QtCore.QRect(20, 310, 631, 192))
+        self.tw_registroRegion.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registroRegion.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tw_registroRegion.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.tw_registroRegion.setObjectName("tw_registroRegion")
+        self.tw_registroRegion.setColumnCount(2)
+        self.tw_registroRegion.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroRegion.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tw_registroRegion.setHorizontalHeaderItem(1, item)
+        self.tw_registroRegion.horizontalHeader().setDefaultSectionSize(140)
+        self.tw_registroRegion.horizontalHeader().setStretchLastSection(True)
         FrmRegion.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(FrmRegion)
@@ -160,7 +170,6 @@ class Ui_FrmRegion(object):
         FrmRegion.setTabOrder(self.le_identificador, self.le_nombre)
         FrmRegion.setTabOrder(self.le_nombre, self.le_buscar)
         FrmRegion.setTabOrder(self.le_buscar, self.btn_buscar)
-        FrmRegion.setTabOrder(self.btn_buscar, self.tbv_registrosRegion)
 
     def retranslateUi(self, FrmRegion):
         _translate = QtCore.QCoreApplication.translate
@@ -177,6 +186,10 @@ class Ui_FrmRegion(object):
         self.btn_eliminar.setToolTip(_translate("FrmRegion", "<html><head/><body><p><span style=\" font-weight:400;\">Elimina un registro</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("FrmRegion", "Eliminar"))
         self.btn_buscar.setText(_translate("FrmRegion", "Buscar"))
+        item = self.tw_registroRegion.horizontalHeaderItem(0)
+        item.setText(_translate("FrmRegion", "ID"))
+        item = self.tw_registroRegion.horizontalHeaderItem(1)
+        item.setText(_translate("FrmRegion", "Nombre"))
 
 
 if __name__ == "__main__":

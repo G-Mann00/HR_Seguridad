@@ -370,20 +370,54 @@ background-color: rgb(255, 255, 255)</string>
     </size>
    </property>
   </widget>
-  <widget class="QTableView" name="tbv_registroPais">
+  <widget class="QTableWidget" name="tw_registroPais">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>410</y>
+     <y>400</y>
      <width>631</width>
-     <height>171</height>
+     <height>192</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
    </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>200</number>
+   </attribute>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Región</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <tabstops>
@@ -396,7 +430,6 @@ background-color: rgb(255, 255, 255)</string>
   <tabstop>cmb_region</tabstop>
   <tabstop>le_buscar</tabstop>
   <tabstop>btn_buscar</tabstop>
-  <tabstop>tbv_registroPais</tabstop>
  </tabstops>
  <resources>
   <include location="../recursos/iconosBotones.qrc"/>
