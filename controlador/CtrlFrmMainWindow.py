@@ -3,6 +3,8 @@ from vistas.FrmPrincipal import Ui_FrmPrincipal
 from PyQt5 import QtWidgets
 from controlador.CtrlFrmAsignarPermisos import CtrlFrmAsignarPermisos
 from controlador.CtrlFrmAsignarRoles import CtrlFrmAsignarRoles
+from controlador.CtrlFrmRegion import CtrlFrmRegion
+import sys
 
 
 class CtrlFrmMainWindow(QtWidgets.QMainWindow):
@@ -13,12 +15,14 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         self.CtrlAP = CtrlFrmAsignarPermisos()
         self.CtrlAR = CtrlFrmAsignarRoles()
         #self.CtrlGU = CtrlFrmGestionUser()
+        self.CtrlReg = CtrlFrmRegion()
         self.initControlGui()
 
     def initControlGui(self):
         self.ui.btn_asignarFuncionesRol.triggered.connect(self.openFrmAsignarPermisos)
         self.ui.btn_asignarRol.triggered.connect(self.openFrmAsignarRoles)
         #self.ui.actionGestion_de_Usuarios.triggered.connect(self.openGestionUser)
+        self.ui.btn_gestionRegion.triggered.connect(self.openFrmRegion)
 
     def openFrmAsignarPermisos(self):
         self.CtrlAP.show()
@@ -31,3 +35,13 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
     #def openGestionUser(self):
         #self.CtrlGU.show()
         #self.close()
+
+    def openFrmRegion(self):
+        self.CtrlReg.show()
+        #self.close()
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    frm = CtrlFrmMainWindow()
+    frm.show()
+    sys.exit(app.exec_())
