@@ -115,12 +115,12 @@
      <font>
       <pointsize>12</pointsize>
       <weight>50</weight>
-      <italic>true</italic>
+      <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="readOnly">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLineEdit" name="le_nombre">
@@ -136,7 +136,7 @@
      <font>
       <pointsize>12</pointsize>
       <weight>50</weight>
-      <italic>true</italic>
+      <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
@@ -381,6 +381,9 @@ background-color: rgb(255, 255, 255)</string>
    </property>
    <property name="sizeAdjustPolicy">
     <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
    </property>
    <property name="selectionMode">
     <enum>QAbstractItemView::SingleSelection</enum>
