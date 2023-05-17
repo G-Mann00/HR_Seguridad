@@ -419,7 +419,7 @@ background-color:white
      </size>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="te_Direccion">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -540,6 +540,9 @@ background-color: rgb(255, 255, 255)</string>
    <property name="sizeAdjustPolicy">
     <enum>QAbstractScrollArea::AdjustToContents</enum>
    </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
    <property name="selectionMode">
     <enum>QAbstractItemView::SingleSelection</enum>
    </property>
@@ -600,7 +603,7 @@ background-color: rgb(255, 255, 255)</string>
   <tabstop>le_estado</tabstop>
   <tabstop>le_ciudad</tabstop>
   <tabstop>le_codigoPostal</tabstop>
-  <tabstop>textEdit</tabstop>
+  <tabstop>te_Direccion</tabstop>
   <tabstop>cbx_filtro</tabstop>
   <tabstop>le_buscar</tabstop>
   <tabstop>btn_buscar</tabstop>

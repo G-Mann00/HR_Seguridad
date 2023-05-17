@@ -5,6 +5,7 @@ from controlador.CtrlFrmAsignarPermisos import CtrlFrmAsignarPermisos
 from controlador.CtrlFrmAsignarRoles import CtrlFrmAsignarRoles
 from controlador.CtrlFrmRegion import CtrlFrmRegion
 from controlador.CtrlFrmPais import CtrlFrmPais
+from controlador.CtrlFrmLocation import CtrlFrmLocation
 import sys
 
 
@@ -18,6 +19,7 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         #self.CtrlGU = CtrlFrmGestionUser()
         self.CtrlReg = CtrlFrmRegion()
         self.CtrlPais = CtrlFrmPais()
+        self.CtrlLoc = CtrlFrmLocation()
         self.initControlGui()
 
     def initControlGui(self):
@@ -26,7 +28,10 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         #self.ui.actionGestion_de_Usuarios.triggered.connect(self.openGestionUser)
         self.ui.btn_gestionRegion.triggered.connect(self.openFrmRegion)
         self.ui.btn_gestionPais.triggered.connect(self.openFrmPais)
+        self.ui.btn_gestionLocalizacion.triggered.connect(self.openFrmLocation)
 
+    def openFrmLocation(self):
+        self.CtrlLoc.show()
 
     def openFrmAsignarPermisos(self):
         self.CtrlAP.show()
