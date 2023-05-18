@@ -8,12 +8,7 @@ class Jobs:
         self._max_salary = max_salary
 
     def __str__(self):
-        return f'''
-        job_id: {self._job_id},
-        job_title: {self._job_title},
-        min_salary: {self._min_salary},
-        max_salary: {self._max_salary}
-        '''
+        return f'job_id:{self._job_id},job_title:{self._job_title},min_salary:{self._min_salary},max_salary:{self._max_salary}'
 
     def __getitem__(self):
         u = copy.copy(self)
@@ -55,5 +50,5 @@ class Jobs:
         return self._max_salary
 
     @max_salary.setter
-    def job_id(self, max_salary):
+    def max_salary(self, max_salary):
         self._max_salary = max_salary
