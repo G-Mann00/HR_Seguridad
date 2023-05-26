@@ -149,6 +149,7 @@ class Ui_FrmRegion(object):
         self.tw_registroRegion = QtWidgets.QTableWidget(self.centralwidget)
         self.tw_registroRegion.setGeometry(QtCore.QRect(20, 310, 631, 192))
         self.tw_registroRegion.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tw_registroRegion.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tw_registroRegion.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tw_registroRegion.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.tw_registroRegion.setObjectName("tw_registroRegion")
@@ -160,6 +161,7 @@ class Ui_FrmRegion(object):
         self.tw_registroRegion.setHorizontalHeaderItem(1, item)
         self.tw_registroRegion.horizontalHeader().setDefaultSectionSize(140)
         self.tw_registroRegion.horizontalHeader().setStretchLastSection(True)
+        self.tw_registroRegion.verticalHeader().setVisible(False)
         FrmRegion.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(FrmRegion)
