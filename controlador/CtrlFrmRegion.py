@@ -57,10 +57,6 @@ class CtrlFrmRegion(QtWidgets.QMainWindow):
     def cargarDatos(self):
         listaRegion = self.dRegion.listarRegion()
 
-        if listaRegion == None:
-            alert = QMessageBox.information(self, 'Alerta', "No hay ninguna región", QMessageBox.Ok)
-            return
-
         self.ui.tw_registroRegion.setRowCount(len(listaRegion))
         self.ui.tw_registroRegion.setColumnCount(2)
         row = 0
@@ -113,7 +109,7 @@ class CtrlFrmRegion(QtWidgets.QMainWindow):
 
     def btnEditar(self):
         if self.ui.le_identificador.text() == "":
-            alert = QMessageBox.information(self, 'Alerta', "Debe seleccionar una región", QMessageBox.Ok)
+            alert = QMessageBox.information(self, 'Alerta', "Debe seleccionar una región editar", QMessageBox.Ok)
             return
 
         if self.ui.le_nombre.text() == "":
@@ -137,7 +133,7 @@ class CtrlFrmRegion(QtWidgets.QMainWindow):
 
     def btnEliminar(self):
         if self.ui.le_identificador.text() == "":
-            alert = QMessageBox.information(self, 'Alerta', "Debe seleccionar una región", QMessageBox.Ok)
+            alert = QMessageBox.information(self, 'Alerta', "Debe seleccionar una región a eliminar", QMessageBox.Ok)
             return
 
         alert = QMessageBox.warning(self, "Alerta", f"¿Está seguro de eliminar la región {self.ui.le_nombre.text()}?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
