@@ -3,21 +3,25 @@ from PyQt5.QtWidgets import QMessageBox
 from vistas.FrmTrabajo import Ui_FrmTrabajo
 from datos.Dt_Jobs import Dt_Jobs
 from entidades.Jobs import Jobs
+from negocios.Ng_Jobs import Ng_Jobs
 
 
 class CtrlFrmTrabajo(QtWidgets.QMainWindow):
+    dJobs = Dt_Jobs()
+    nJobs = Ng_Jobs()
+    job = Jobs() # nos va permitir validar si estamos en modo edición o no
 
     def __init__(self):
         super().__init__()
         self.ui = Ui_FrmTrabajo()
         self.ui.setupUi(self)
         self.initControlGui()
-        self.cargarDatosTabla()
 
 
     def initControlGui(self):
+        self.cargarDatosTabla()
         self.ui.btn_agregar.clicked.connect(self.BtnAgregar)
-        self.ui.tw_registrosTrabajo.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        # self.ui.tw_registrosTrabajo.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.ui.btn_nuevo.clicked.connect(self.limpiarDatos)
         self.ui.tw_registrosTrabajo.clicked.connect(self.filaSeleccionada)
         self.ui.btn_buscar.clicked.connect(self.buscarTrabajo)
@@ -25,23 +29,25 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
         self.ui.btn_eliminar.clicked.connect(self.BtnEliminar)
         pass
 
+    def le_buscadorChanged(self):
+        if self.ui.le_buscador.text() == "":
+            self.cargarDatosTabla()
 
     def buscarTrabajo(self):
         if self.ui.le_buscador.text() == "":
             QMessageBox.warning(self, "Error", "Ingrese un nombre de trabajo")
             return
 
-        dTrabajo = Dt_Jobs()
-        j = Jobs()
-        j.job_title = self.ui.le_buscador.text()
-        listaTrabajo = dTrabajo.buscar(j)
+        self.job.job_title = self.ui.le_buscador.text()
+        listaTrabajo = self.dJobs.filtrarTrabajo(self.job)
+
         if listaTrabajo == None:
             alert = QMessageBox.information(self, 'Alerta', "No se encontró el trabajo", QMessageBox.Ok)
             return
 
         self.ui.tw_registrosTrabajo.setRowCount(len(listaTrabajo))
         self.ui.tw_registrosTrabajo.setColumnCount(4)
-        self.ui.tw_registrosTrabajo.verticalHeader().setVisible(False)
+        # self.ui.tw_registrosTrabajo.verticalHeader().setVisible(False)
         row = 0
         for r in listaTrabajo:
             self.ui.tw_registrosTrabajo.setItem(row, 0, QtWidgets.QTableWidgetItem(str(r.job_id)))
@@ -52,15 +58,14 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
 
 
     def cargarDatosTabla(self):
-        dTrabajo = Dt_Jobs()
-        listaTrabajo = dTrabajo.listarTrabajo()
+        listaTrabajo = self.dJobs.listarTrabajo()
+
         if listaTrabajo == None:
             alert = QMessageBox.information(self, 'Alerta', "No hay ningun trabajo", QMessageBox.Ok)
             return
 
         self.ui.tw_registrosTrabajo.setRowCount(len(listaTrabajo))
         self.ui.tw_registrosTrabajo.setColumnCount(4)
-        self.ui.tw_registrosTrabajo.verticalHeader().setVisible(False)
         row = 0
         for r in listaTrabajo:
             self.ui.tw_registrosTrabajo.setItem(row, 0, QtWidgets.QTableWidgetItem(str(r.job_id)))
@@ -75,6 +80,7 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
         self.ui.le_nombre.setText("")
         self.ui.le_salarioMin.setText("")
         self.ui.le_salarioMax.setText("")
+        self.ui.le_nombre.setFocus()
 
 
     def filaSeleccionada(self):
@@ -89,6 +95,11 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
         self.ui.le_salarioMin.setText(minimo)
         self.ui.le_salarioMax.setText(maximo)
         self.ui.le_nombre.setFocus()
+
+        self.job.job_id = id
+        self.job.job_title = nombre
+        self.job.min_salary = float(minimo)
+        self.job.max_salary = float(maximo)
 
 
     def BtnAgregar(self):
@@ -109,19 +120,24 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
             alert = QMessageBox.information(self, 'Alerta', "Debe insertar un salario maximo", QMessageBox.Ok)
             return
 
-        dTrabajo = Dt_Jobs()
-        j = Jobs()
-        j.job_title = self.ui.le_nombre.text()
-        j.min_salary = float(self.ui.le_salarioMin.text())
-        j.max_salary = float(self.ui.le_salarioMax.text())
+        self.job.job_title = self.ui.le_nombre.text()
+        self.job.min_salary = float(self.ui.le_salarioMin.text())
+        self.job.max_salary = float(self.ui.le_salarioMax.text())
 
-        if not dTrabajo.insertarTrabajo(j):
-            alert = QMessageBox.information(self, 'Alerta', "Error al insertar el trabajo", QMessageBox.Ok)
-            return
 
-        QMessageBox.information(self, 'Alerta', "Se insertó correctamente el trabajo", QMessageBox.Ok)
-        self.limpiarDatos()
-        self.cargarDatosTabla()
+        resultado = self.nJobs.insertarTrabajo(self.job)
+
+        match resultado:
+            case -1:
+                alert = QMessageBox.information(self, 'Alerta', "Error al insertar el trabajo", QMessageBox.Ok)
+
+            case 1:
+                QMessageBox.information(self, 'Gestion de Trabajos', "Se insertó correctamente el trabajo", QMessageBox.Ok)
+                self.limpiarDatos()
+                self.cargarDatosTabla()
+
+            case 2:
+                alert = QMessageBox.information(self, 'Alerta', "Ya existe el trabajo", QMessageBox.Ok)
 
 
     def BtnEditar(self):
@@ -141,18 +157,20 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
             alert = QMessageBox.information(self, 'Alerta', "Debe insertar un salario maximo", QMessageBox.Ok)
             return
 
-        dTrabajo = Dt_Jobs()
-        j = Jobs()
-        j.job_id = self.ui.le_id.text()
-        j.job_title = self.ui.le_nombre.text()
-        j.min_salary = float(self.ui.le_salarioMin.text())
-        j.max_salary = float(self.ui.le_salarioMax.text())
-
-        if not dTrabajo.actualizarTrabajo(j):
-            alert = QMessageBox.information(self, 'Alerta', "Error al insertar el trabajo", QMessageBox.Ok)
+        if self.ui.le_nombre.text() == self.job.job_title:
+            alert = QMessageBox.information(self, 'Alerta', "El nombre de trabajo es el mismo. No se ha modificado nada", QMessageBox.Ok)
             return
 
-        QMessageBox.information(self, 'Alerta', "Se actualizo correctamente el trabajo", QMessageBox.Ok)
+        self.job.job_id = self.ui.le_id.text()
+        self.job.job_title = self.ui.le_nombre.text()
+        self.job.min_salary = float(self.ui.le_salarioMin.text())
+        self.job.max_salary = float(self.ui.le_salarioMax.text())
+
+        if not self.nJobs.actualizarTrabajo(self.job):
+            alert = QMessageBox.information(self, 'Alerta', "Error al actualizar el trabajo", QMessageBox.Ok)
+            return
+
+        QMessageBox.information(self, 'Gestion de Trabajos', "Se actualizó correctamente el trabajo", QMessageBox.Ok)
         self.limpiarDatos()
         self.cargarDatosTabla()
 
@@ -166,14 +184,12 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
         if alert == QMessageBox.No:
             return
 
-        dTrabajo = Dt_Jobs()
-        j = Jobs()
-        j.job_id = self.ui.le_id.text()
+        self.job.job_id = self.ui.le_id.text()
 
-        if not dTrabajo.eliminarTrabajo(j):
+        if not self.dJobs.eliminarTrabajo(self.job):
             alert = QMessageBox.information(self, 'Alerta', "Error al eliminar el trabajo", QMessageBox.Ok)
             return
 
-        QMessageBox.information(self, 'Alerta', "Se elimino correctamente el trabajo", QMessageBox.Ok)
+        QMessageBox.information(self, 'Alerta', "Se eliminó correctamente el trabajo", QMessageBox.Ok)
         self.limpiarDatos()
         self.cargarDatosTabla()
