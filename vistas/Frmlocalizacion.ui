@@ -122,6 +122,9 @@
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
+    <property name="currentText">
+     <string>-- Select --</string>
+    </property>
     <item>
      <property name="text">
       <string>-- Select --</string>
@@ -476,6 +479,16 @@ background-color:white
    <item>
     <property name="text">
      <string>-- Select --</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pais</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ciudad</string>
     </property>
    </item>
   </widget>
