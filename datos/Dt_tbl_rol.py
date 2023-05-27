@@ -1,9 +1,9 @@
 import pymysql
 
 from datos.conexion import Conexion
-from entidades.VwUserRol import VwUserRol
+from entidades.Tbl_rol import Tbl_rol
 
-class Dt_tbl_UserRol:
+class Dt_tbl_rol:
     def __init__(self):
         pass
     _dbCon = Conexion()
@@ -11,8 +11,8 @@ class Dt_tbl_UserRol:
     _cursor = None
     _sql = ""
 
-    def listUsuarioRol(self):
-        self._sql = "SELECT id_UserRol, id_user, id_rol FROM Seguridad.tbl_UserRol;"
+    def llenarCbxRol(self):
+        self._sql = "SELECT id_rol, rol FROM Seguridad.tbl_rol where estado<>3;"
         try:
             # abrimos la conexion & cursor
             self._con = self._dbCon.getConnection()
@@ -22,19 +22,16 @@ class Dt_tbl_UserRol:
             # Obtenemos todos los registros de la consulta
             registros = self._cursor.fetchall()
             print("Numero total de registros: ", self._cursor.rowcount)
-            listaUserRol = []
+            listaRol = []
 
-            for tur in registros:
-                vwUR = VwUserRol()
-                vwUR._idUserRol = tur['id_UserRol']
-                vwUR._user = tur['id_user']
-                vwUR._rol = tur['id_rol']
-                listaUserRol.append(vwUR)
-            print('listaUserRol', listaUserRol)
-            return listaUserRol
+            for tr in registros:
+                trol = Tbl_rol(tr['id_rol'], tr['rol'])
+                listaRol.append(trol)
+            print('listaRol', listaRol)
+            return listaRol
 
         except Exception as e:
-            print("Datos: Error listUsuarioRol()", e)
+            print("Datos: Error llenarCbxRol()", e)
         finally:
-            #self._dbCon.closeCon()
+            #self._dbCon.closeConnection()
             pass

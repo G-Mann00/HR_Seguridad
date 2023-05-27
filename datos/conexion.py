@@ -64,10 +64,6 @@ class Conexion:
         else:
             print("No hay cursor que cerrar")
 
-
-
-
-
 #if __name__ == '__main__':
  #   Conexion.getConnection()
   #  Conexion.getCursor()
