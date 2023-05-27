@@ -3,17 +3,18 @@ from datos.conexion import Conexion
 
 
 class Dt_Jobs:
+    _con = None
+    _cursor = None
 
     def __init__(self):
-        self._con = None
-        self._cursor = None
-
+        pass
 
     def listarTrabajo(self):
         listaTrabajo = []
         try:
+
             self._con = Conexion.getConnection()
-            self._cursor = self._con.cursor()
+            self._cursor = Conexion.getCursor()
 
             sql = "SELECT * FROM Seguridad.jobs;"
             self._cursor.execute(sql)
@@ -28,19 +29,20 @@ class Dt_Jobs:
                 listaTrabajo.append(trabajo)
             self._cursor.close()
             return listaTrabajo
+
         except Exception as e:
-            print("Error en la consulta", e)
-            if self._con.open:
-                self._con.close()
-                self._cursor.close()
-                print("MySQL connection was closed")
+            print("Datos: Error en listarTrabajo", e)
+
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
 
 
-    def buscarTrabajo(self, jobs_param):
+    def filtrarTrabajo(self, jobs_param):
         listaTrabajo = []
         try:
             self._con = Conexion.getConnection()
-            self._cursor = self._con.cursor()
+            self._cursor = Conexion.getCursor()
 
             sql = f"SELECT * FROM Seguridad.jobs WHERE job_title like '%{jobs_param.job_title}%';"
             self._cursor.execute(sql)
@@ -53,15 +55,14 @@ class Dt_Jobs:
                 maximo = r['max_salary']
                 trabajo = Jobs(id, nombre, minimo, maximo)
                 listaTrabajo.append(trabajo)
-                print(f"Trabajo: {trabajo}")
-            self._cursor.close()
             return listaTrabajo
+
         except Exception as e:
-            print("Error en la consulta", e)
-            if self._con.open:
-                self._con.close()
-                self._cursor.close()
-                print("MySQL connection was closed")
+            print("Datos: Error en filtrarTrabajo", e)
+
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
 
 
     def buscar(self, jobs_param):
@@ -87,8 +88,10 @@ class Dt_Jobs:
                 listaTrabajo.append(trabajo)
                 print(f"Trabajo: {trabajo}")
             return listaTrabajo
+
         except Exception as e:
             print("Error en la consulta", e)
+
         finally:
             Conexion.closeCursor()
             Conexion.closeConnection()
@@ -97,48 +100,74 @@ class Dt_Jobs:
     def insertarTrabajo(self, jobs_param):
         resultado = False
         try:
-            con = Conexion.getConnection()
-            cursor = Conexion.getCursor()
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
             sql = f"INSERT INTO Seguridad.jobs(job_title, min_salary, max_salary) VALUES ('{jobs_param.job_title}', '{jobs_param.min_salary}', '{jobs_param.max_salary}');"
-            if cursor.execute(sql) > 0:
+            if self._cursor.execute(sql) > 0:
                 resultado = True
-            con.commit()
+            self._con.commit()
+            return resultado
+
         except Exception as e:
-            print(f"Error en la insercion: {e}")
+            print(f"Datos: Error en insertarTrabajo", e)
+
         finally:
             Conexion.closeCursor()
             Conexion.closeConnection()
-            return resultado
 
 
     def actualizarTrabajo(self, jobs_param):
         resultado = False
         try:
-            con = Conexion.getConnection()
-            cursor = Conexion.getCursor()
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
             sql = f"UPDATE Seguridad.jobs SET job_title = '{jobs_param.job_title}', min_salary = '{jobs_param.min_salary}', max_salary = '{jobs_param.max_salary}' WHERE job_id = {jobs_param.job_id};"
-            if cursor.execute(sql) > 0:
+            if self._cursor.execute(sql) > 0:
                 resultado = True
-            con.commit()
+            self._con.commit()
+            return resultado
+
         except Exception as e:
-            print(f"Error en la actualizacion: {e}")
+            print(f"Datos: Error en la actualizarTrabajo", e)
+
         finally:
             Conexion.closeCursor()
             Conexion.closeConnection()
-            return resultado
 
     def eliminarTrabajo(self, jobs_param):
         resultado = False
         try:
-            con = Conexion.getConnection()
-            cursor = Conexion.getCursor()
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
             sql = f"DELETE FROM Seguridad.jobs WHERE job_id = {jobs_param.job_id};"
-            if cursor.execute(sql) > 0:
+            if self._cursor.execute(sql) > 0:
                 resultado = True
-            con.commit()
+            self._con.commit()
+            return resultado
+
         except Exception as e:
-            print(f"Error en la eliminacion: {e}")
+            print(f"Datos: Error en eliminarTrabajo", e)
+
         finally:
             Conexion.closeCursor()
             Conexion.closeConnection()
+
+    def existeTrabajo(self, jobs_param):
+        resultado = False
+        try:
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
+
+            sql = f"SELECT * FROM Seguridad.jobs WHERE job_title like '%{jobs_param.job_title}%';"
+            self._cursor.execute(sql)
+
+            if self._cursor.rowcount > 0:
+                resultado = True
             return resultado
+
+        except Exception as e:
+            print(f"Datos: Error en existeTrabajo", e)
+
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()

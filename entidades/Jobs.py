@@ -1,5 +1,6 @@
 import copy
 
+
 class Jobs:
     def __init__(self, job_id=None, job_title=None, min_salary=None, max_salary=None):
         self._job_id = job_id
@@ -13,10 +14,9 @@ class Jobs:
     def __getitem__(self):
         u = copy.copy(self)
         return u
-    
+
 
     'Getters y Setters'
-
     'job_id'
     @property
     def job_id(self):
