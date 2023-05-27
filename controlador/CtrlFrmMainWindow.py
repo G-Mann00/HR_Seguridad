@@ -7,6 +7,7 @@ from controlador.CtrlFrmRegion import CtrlFrmRegion
 from controlador.CtrlFrmPais import CtrlFrmPais
 from controlador.CtrlFrmLocation import CtrlFrmLocation
 from controlador.CtrlFrmTrabajo import CtrlFrmTrabajo
+from controlador.CtrlFrmDepartamentos import CtrlFrmDepartamentos
 import sys
 
 
@@ -22,6 +23,7 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         self.CtrlPais = CtrlFrmPais()
         self.CtrlLoc = CtrlFrmLocation()
         self.CtrlJob = CtrlFrmTrabajo()
+        self.CtrlDep = CtrlFrmDepartamentos()
         self.initControlGui()
 
     def initControlGui(self):
@@ -32,6 +34,7 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         self.ui.btn_gestionPais.triggered.connect(self.openFrmPais)
         self.ui.btn_gestionLocalizacion.triggered.connect(self.openFrmLocation)
         self.ui.btn_gestionTrabajos.triggered.connect(self.openFrmTrabajo)
+        self.ui.btn_gestionDepartamentos.triggered.connect(self.openFrmDepartamentos)
 
     def openFrmLocation(self):
         self.CtrlLoc.show()
@@ -57,6 +60,10 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
 
     def openFrmTrabajo(self):
         self.CtrlJob.show()
+
+    def openFrmDepartamentos(self):
+        self.CtrlDep.show()
+
 
 
 
