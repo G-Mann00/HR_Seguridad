@@ -38,7 +38,7 @@ class CtrlFrmRegion(QtWidgets.QMainWindow):
             QMessageBox.warning(self, "Error", "Ingrese un nombre de región")
             return
 
-        self.reg= self.ui.le_buscar.text()
+        self.reg.region_name= self.ui.le_buscar.text()
         listaRegion = self.dRegion.filtrarRegion(self.reg)
 
         if listaRegion == None:
