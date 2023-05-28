@@ -85,18 +85,18 @@ class CtrlFrmTrabajo(QtWidgets.QMainWindow):
 
     def filaSeleccionada(self):
         fila = self.ui.tw_registrosTrabajo.currentRow()
-        id = self.ui.tw_registrosTrabajo.item(fila, 0).text()
+        self.job.job_id = self.ui.tw_registrosTrabajo.item(fila, 0).text()
         nombre = self.ui.tw_registrosTrabajo.item(fila, 1).text()
         minimo = self.ui.tw_registrosTrabajo.item(fila, 2).text()
         maximo = self.ui.tw_registrosTrabajo.item(fila, 3).text()
 
-        self.ui.le_id.setText(id)
+        self.ui.le_id.setText(self.job.job_id)
         self.ui.le_nombre.setText(nombre)
         self.ui.le_salarioMin.setText(minimo)
         self.ui.le_salarioMax.setText(maximo)
         self.ui.le_nombre.setFocus()
 
-        self.job.job_id = id
+        #self.job.job_id = id
         self.job.job_title = nombre
         self.job.min_salary = float(minimo)
         self.job.max_salary = float(maximo)
