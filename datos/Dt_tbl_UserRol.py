@@ -12,7 +12,7 @@ class Dt_tbl_UserRol:
     _sql = ""
 
     def listUsuarioRol(self):
-        self._sql = "SELECT id_UserRol, id_user, id_rol FROM Seguridad.tbl_UserRol;"
+        self._sql = "SELECT * FROM VwUserRol;"
         try:
             # abrimos la conexion & cursor
             self._con = self._dbCon.getConnection()
@@ -27,8 +27,10 @@ class Dt_tbl_UserRol:
             for tur in registros:
                 vwUR = VwUserRol()
                 vwUR._idUserRol = tur['id_UserRol']
-                vwUR._user = tur['id_user']
-                vwUR._rol = tur['id_rol']
+                vwUR._id_user = tur['id_user']
+                vwUR._id_rol = tur['id_rol']
+                vwUR._user = tur['user']
+                vwUR._rol = tur['rol']
                 listaUserRol.append(vwUR)
             print('listaUserRol', listaUserRol)
             return listaUserRol
@@ -38,3 +40,36 @@ class Dt_tbl_UserRol:
         finally:
             #self._dbCon.closeCon()
             pass
+
+    #PENDIENTE
+    def validarIdUnico(self, UserRol_param):
+        resultado = False
+        try:
+            self._con = Conexion.getConnection()
+            self._cursor = self._con.cursor()
+            sql = f"SELECT country_id FROM Seguridad.countries WHERE country_id = '{country_param.country_id}';"
+            if self._cursor.execute(sql) > 0:
+                resultado = True
+        except Exception as e:
+            print("Error en la consulta de validarUnico de UserRol", e)
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return resultado
+
+    def actualizarUserRol(self, UserRol_param):
+        resultado = False
+        try:
+            self._con = Conexion.getConnection()
+            self._cursor = self._con.cursor()
+            sql = f"UPDATE Seguridad.tbl_UserRol SET id_user = '{UserRol_param.id_user}', id_rol = '{UserRol_param.id_rol}' WHERE id_UserRol = '{UserRol_param._id_UserRol}';"
+            if self._cursor.execute(sql) > 0:
+                resultado = True
+            self._con.commit()
+
+        except Exception as e:
+            print("Error en la consulta en la actualizarUserRol", e)
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return resultado

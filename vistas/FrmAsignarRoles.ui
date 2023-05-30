@@ -117,11 +117,11 @@
      <string>Rol</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_asignar">
+   <widget class="QPushButton" name="btn_actualizar">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>50</y>
+      <x>510</x>
+      <y>90</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -142,49 +142,11 @@
 background-color:rgb(7, 125, 8)</string>
     </property>
     <property name="text">
-     <string>Asignar</string>
+     <string>Actualizar</string>
     </property>
     <property name="icon">
      <iconset resource="../recursos/iconosApp.qrc">
       <normaloff>:/iconosCrud/add40.png</normaloff>:/iconosCrud/add40.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>20</width>
-      <height>20</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_eliminar">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>100</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Elimina un rol que este asignado a un usuario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:white;
-background-color:rgb(201, 0, 0)</string>
-    </property>
-    <property name="text">
-     <string>Eliminar</string>
-    </property>
-    <property name="icon">
-     <iconset resource="../recursos/iconosApp.qrc">
-      <normaloff>:/iconosCrud/delete40.png</normaloff>:/iconosCrud/delete40.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -273,6 +235,21 @@ background-color:rgb(201, 0, 0)</string>
    </attribute>
    <column>
     <property name="text">
+     <string>Id_UserRol</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Id_User</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Id_Rol</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Usuario</string>
     </property>
    </column>
@@ -284,8 +261,7 @@ background-color:rgb(201, 0, 0)</string>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>btn_asignar</tabstop>
-  <tabstop>btn_eliminar</tabstop>
+  <tabstop>btn_actualizar</tabstop>
   <tabstop>cbx_usuario</tabstop>
   <tabstop>cbx_rol</tabstop>
   <tabstop>le_buscador</tabstop>

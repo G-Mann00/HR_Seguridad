@@ -1,7 +1,7 @@
 from vistas.FrmPrincipal import Ui_FrmPrincipal
 #from controlador.CtrlFrmGestionUser import CtrlFrmGestionUser
 from PyQt5 import QtWidgets
-from controlador.CtrlFrmAsignarPermisos import CtrlFrmAsignarPermisos
+from controlador.CtrlFrmAsignarOpciones import CtrlFrmAsignarOpciones
 from controlador.CtrlFrmAsignarRoles import CtrlFrmAsignarRoles
 from controlador.CtrlFrmRegion import CtrlFrmRegion
 from controlador.CtrlFrmPais import CtrlFrmPais
@@ -16,12 +16,12 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         super().__init__()
         self.ui = Ui_FrmPrincipal()
         self.ui.setupUi(self)
-        self.CtrlAP = CtrlFrmAsignarPermisos()
+        self.CtrlAP = CtrlFrmAsignarOpciones()
         self.CtrlAR = CtrlFrmAsignarRoles()
         #self.CtrlGU = CtrlFrmGestionUser()
         self.CtrlReg = CtrlFrmRegion()
-        self.CtrlPais = CtrlFrmPais()
-        self.CtrlLoc = CtrlFrmLocation()
+        #self.CtrlPais = CtrlFrmPais()
+        #self.CtrlLoc = CtrlFrmLocation()
         self.CtrlJob = CtrlFrmTrabajo()
         self.CtrlDep = CtrlFrmDepartamentos()
         self.initControlGui()

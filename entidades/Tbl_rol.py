@@ -1,6 +1,5 @@
 import copy
 
-
 class Tbl_rol:
     def __init__(self, id_rol=None, rol=None, estado=None):
 
