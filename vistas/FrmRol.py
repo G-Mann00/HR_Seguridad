@@ -184,15 +184,13 @@ class Ui_FrmRol(object):
         self.tw_registroRoles.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tw_registroRoles.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.tw_registroRoles.setObjectName("tw_registroRoles")
-        self.tw_registroRoles.setColumnCount(3)
+        self.tw_registroRoles.setColumnCount(2)
         self.tw_registroRoles.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tw_registroRoles.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tw_registroRoles.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tw_registroRoles.setHorizontalHeaderItem(2, item)
-        self.tw_registroRoles.horizontalHeader().setDefaultSectionSize(150)
+        self.tw_registroRoles.horizontalHeader().setDefaultSectionSize(210)
         self.tw_registroRoles.horizontalHeader().setStretchLastSection(True)
 
         self.retranslateUi(FrmRol)
@@ -228,8 +226,6 @@ class Ui_FrmRol(object):
         item.setText(_translate("FrmRol", "ID"))
         item = self.tw_registroRoles.horizontalHeaderItem(1)
         item.setText(_translate("FrmRol", "Nombre"))
-        item = self.tw_registroRoles.horizontalHeaderItem(2)
-        item.setText(_translate("FrmRol", "Estado"))
 
 
 if __name__ == "__main__":

@@ -227,7 +227,7 @@
      </font>
     </property>
    </widget>
-   <widget class="QLineEdit" name="le_pwd">
+   <widget class="QLineEdit" name="le_confirmarPwd">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -263,7 +263,7 @@
      </font>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="cb_estado">
     <property name="geometry">
      <rect>
       <x>11</x>
@@ -305,7 +305,7 @@
      <string>Usuario:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="le_usuario_3">
+   <widget class="QLineEdit" name="le_usuario">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -344,7 +344,7 @@
      <string>Contraseña:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="le_pwd_4">
+   <widget class="QLineEdit" name="le_pwd">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -362,7 +362,7 @@
      </font>
     </property>
    </widget>
-   <widget class="QLineEdit" name="le_email_5">
+   <widget class="QLineEdit" name="le_comfirmarEmail">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -611,7 +611,7 @@ background-color: rgb(201,0,0)</string>
     </property>
    </item>
   </widget>
-  <widget class="QLineEdit" name="le_filtro">
+  <widget class="QLineEdit" name="le_buscador">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -725,16 +725,16 @@ background-color: rgb(255, 255, 255)</string>
   <tabstop>btn_editar</tabstop>
   <tabstop>btn_eliminar</tabstop>
   <tabstop>le_identificador</tabstop>
-  <tabstop>le_usuario_3</tabstop>
-  <tabstop>le_pwd_4</tabstop>
+  <tabstop>le_usuario</tabstop>
   <tabstop>le_pwd</tabstop>
+  <tabstop>le_confirmarPwd</tabstop>
   <tabstop>le_nombre</tabstop>
   <tabstop>le_apellido</tabstop>
   <tabstop>le_email</tabstop>
-  <tabstop>le_email_5</tabstop>
-  <tabstop>checkBox</tabstop>
+  <tabstop>le_comfirmarEmail</tabstop>
+  <tabstop>cb_estado</tabstop>
   <tabstop>cbx_filtro</tabstop>
-  <tabstop>le_filtro</tabstop>
+  <tabstop>le_buscador</tabstop>
   <tabstop>btn_buscar</tabstop>
   <tabstop>tw_registroUsuarios</tabstop>
  </tabstops>

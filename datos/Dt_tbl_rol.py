@@ -2,6 +2,8 @@ import pymysql
 
 from datos.conexion import Conexion
 from entidades.Tbl_rol import Tbl_rol
+from entidades.VwRol import VwRol
+
 
 class Dt_tbl_rol:
     def __init__(self):
@@ -34,4 +36,29 @@ class Dt_tbl_rol:
             print("Datos: Error llenarCbxRol()", e)
         finally:
             #self._dbCon.closeConnection()
+            pass
+
+    def listarRol(self):
+        self._sql = "SELECT * FROM Seguridad.VwRol;"
+        try:
+
+            self._con = self._dbCon.getConnection()
+            self._cursor = self._dbCon.getCursor()
+            self._cursor.execute(self._sql)
+
+            registros = self._cursor.fetchall()
+            listaRol = []
+            for r in registros:
+                id = r['id_rol']
+                nombre = r['rol']
+                rol = VwRol(id, nombre)
+                listaRol.append(rol)
+            self._cursor.close()
+            return listaRol
+
+        except Exception as e:
+            print("Datos: Error en listarRol", e)
+
+        finally:
+            self._dbCon.closeConnection()
             pass
