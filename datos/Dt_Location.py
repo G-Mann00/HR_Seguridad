@@ -51,7 +51,7 @@ class Dt_Location:
                 city = r['city']
                 state_province = r['state_province']
                 country_name = r['country_name']
-                vistas = VwLocations(id, country_name,state_province, city, postal_code, street_address)
+                vistas = VwLocations(id, country_name, state_province, city, postal_code, street_address)
                 listaLocations.append(vistas)
             return listaLocations
         except Exception as e:
