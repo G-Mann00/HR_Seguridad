@@ -2,6 +2,7 @@ import pymysql
 
 from datos.conexion import Conexion
 from entidades.Tbl_user import tbl_user
+from entidades.VwGestionUsuario import VwGestionUsuario
 
 
 class Dt_tbl_user:
@@ -105,3 +106,51 @@ class Dt_tbl_user:
         finally:
             #self._dbCon.closeConnection()
             pass
+
+    def buscarPorUsuario(self, cadena):
+        listaUsers = []
+        try:
+            self._con = Conexion.getConnection()
+            self._cursor = self._con.cursor()
+            sql = f"SELECT id_user, user, nombres, pwd, apellidos, email FROM Seguridad.tbl_user WHERE user like '%{cadena}%';"
+            self._cursor.execute(sql)
+            registros = self._cursor.fetchall()
+            for r in registros:
+                id = r['id_user']
+                nombre_usuario = r['user']
+                pwd = r['pwd']
+                nombres = r['nombres']
+                apellidos = r['apellidos']
+                email = r['email']
+                user = VwGestionUsuario(id, nombre_usuario, pwd, nombres, apellidos, email)
+                listaUsers.append(user)
+            return listaUsers
+        except Exception as e:
+            print("Datos: Error en buscarPorUsuario", e)
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+
+    def buscarPorNombre(self, cadena):
+        listaUsers = []
+        try:
+            self._con = Conexion.getConnection()
+            self._cursor = self._con.cursor()
+            sql = f"SELECT id_user, user, nombres, pwd, apellidos, email FROM Seguridad.tbl_user WHERE user like '%{cadena}%';"
+            self._cursor.execute(sql)
+            registros = self._cursor.fetchall()
+            for r in registros:
+                id = r['id_user']
+                nombre_usuario = r['user']
+                pwd = r['pwd']
+                nombres = r['nombres']
+                apellidos = r['apellidos']
+                email = r['email']
+                user= VwGestionUsuario(id, nombre_usuario, pwd, nombres, apellidos, email)
+                listaUsers.append(user)
+            return listaUsers
+        except Exception as e:
+            print("Datos: Error en buscarPorNombre", e)
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
