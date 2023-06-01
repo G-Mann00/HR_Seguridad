@@ -610,6 +610,16 @@ background-color: rgb(201,0,0)</string>
      <string>-- Seleccionar --</string>
     </property>
    </item>
+   <item>
+    <property name="text">
+     <string>Usuario</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLineEdit" name="le_buscador">
    <property name="geometry">
