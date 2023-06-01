@@ -1,11 +1,16 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QApplication
+
+from datos.Dt_Location import Dt_Location
 from vistas.FrmDepartamentos import Ui_FrmDepartamentos
 from datos.Dt_Departamentos import Dt_Departamentos
 from datos.Dt_Region import Dt_Region
 from entidades.Departments import Departments
 
 class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
+    dDepartamento = Dt_Departamentos()
+    departamento = Departments()
+    dCiudad = Dt_Location()
 
     def __init__(self):
         self.listaRegion = [] #guardar la lista de regiones(incluido su id) y poder usarlo en guardar, editar.
@@ -53,17 +58,13 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         self.ui.le_identificador.setEnabled(False)
 
     def cargarDatosCombobox(self):
-        dRegion = Dt_Region()
-        listaDepartamentos = dRegion.listarRegion()
-
-        if listaDepartamentos == None:
-            alert = QMessageBox.information(self, 'Alerta', "No hay ningún país", QMessageBox.Ok)
-            return
-
+        dLocalizacion = Dt_Location()
+        listaDepartamentos = dLocalizacion.listarLocations()
+        self.listaCiudad = self.dCiudad.listarLocations()
         self.ui.cbx_localizacion.clear()
         self.ui.cbx_localizacion.addItem("---Seleccione---")
-        for r in self.listaRegion:
-            self.ui.cbx_localizacion.addItem(r.region[1])
+        for r in self.listaCiudad:
+            self.ui.cbx_localizacion.addItem(r.city)
 
     def cargarDatosTabla(self):
         dDepartamento = Dt_Departamentos()
