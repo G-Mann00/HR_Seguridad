@@ -2,7 +2,7 @@ import copy
 
 class Employees:
     def __init__(self, employee_id=None, first_name=None, last_name=None, email=None, phone_number=None, hire_date=None, 
-                       job_id=None, salary=None, manager_id=None, deparment_id=None):
+                       job_id=None, salary=None, manager_id=None, department_id=None):
         self._employee_id = employee_id
         self._first_name = first_name
         self._last_name = last_name
@@ -12,7 +12,7 @@ class Employees:
         self._job_id = job_id
         self._salary = salary
         self._manager_id = manager_id
-        self._deparment_id = deparment_id
+        self._department_id = department_id
     
     def __str__(self):
         return f'''
@@ -123,4 +123,4 @@ class Employees:
 
     @department_id.setter
     def department_id(self, department_id):
-        self._deparment_id = department_id      
+        self._department_id = department_id
