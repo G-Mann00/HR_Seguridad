@@ -7,6 +7,8 @@ from controlador.CtrlFrmRegion import CtrlFrmRegion
 from controlador.CtrlFrmPais import CtrlFrmPais
 from controlador.CtrlFrmLocation import CtrlFrmLocation
 from controlador.CtrlFrmTrabajo import CtrlFrmTrabajo
+from controlador.CtrlFrmEmpleado import CtrlFrmEmpleado
+from controlador.CtrlFrmDependiente import CtrlFrmDependiente
 from controlador.CtrlFrmDepartamentos import CtrlFrmDepartamentos
 from controlador.CtrlFrmRol import CtrlFrmRol
 from controlador.CtrlFrmUsuarios import CtrlFrmUsuarios
@@ -22,9 +24,11 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         #self.CtrlAR = CtrlFrmAsignarRoles()
         #self.CtrlGU = CtrlFrmGestionUser()
         self.CtrlReg = CtrlFrmRegion()
-        #self.CtrlPais = CtrlFrmPais()
-        #self.CtrlLoc = CtrlFrmLocation()
+        self.CtrlPais = CtrlFrmPais()
+        self.CtrlLoc = CtrlFrmLocation()
         self.CtrlJob = CtrlFrmTrabajo()
+        self.CtrlEmp = CtrlFrmEmpleado()
+        self.CtrlDepen = CtrlFrmDependiente()
         self.CtrlDep = CtrlFrmDepartamentos()
         self.CtrlRol = CtrlFrmRol()
         #self.CtrlUser = CtrlFrmUsuarios()
@@ -36,14 +40,16 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
         #self.ui.actionGestion_de_Usuarios.triggered.connect(self.openGestionUser)
         self.ui.btn_gestionRegion.triggered.connect(self.openFrmRegion)
         self.ui.btn_gestionPais.triggered.connect(self.openFrmPais)
-        #self.ui.btn_gestionLocalizacion.triggered.connect(self.openFrmLocation)
+        self.ui.btn_gestionLocalizacion.triggered.connect(self.openFrmLocation)
         self.ui.btn_gestionTrabajos.triggered.connect(self.openFrmTrabajo)
+        self.ui.Btn_gestionEmpleados.triggered.connect(self.openFrmEmpleado)
+        self.ui.btn_gestionDependientes.triggered.connect(self.openFrmDependiente)
         self.ui.btn_gestionDepartamentos.triggered.connect(self.openFrmDepartamentos)
         self.ui.btn_gestionRol.triggered.connect(self.openFrmRol)
         self.ui.btn_gestionUsuario.triggered.connect(self.openFrmUsuarios)
 
-    # def openFrmLocation(self):
-    #     self.CtrlLoc.show()
+    def openFrmLocation(self):
+        self.CtrlLoc.show()
     #
     # def openFrmAsignarPermisos(self):
     #     self.CtrlAP.show()
@@ -66,6 +72,12 @@ class CtrlFrmMainWindow(QtWidgets.QMainWindow):
 
     def openFrmTrabajo(self):
         self.CtrlJob.show()
+
+    def openFrmEmpleado(self):
+        self.CtrlEmp.show()
+
+    def openFrmDependiente(self):
+        self.CtrlDepen.show()
 
     def openFrmDepartamentos(self):
         self.CtrlDep.show()
