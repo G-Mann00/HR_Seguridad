@@ -1,4 +1,4 @@
-class Vw_Location:
+class VwDepartment:
     def __init__(self, id_department=None, department_name=None, city=None):
         self._id_department = id_department
         self._department_name = department_name
