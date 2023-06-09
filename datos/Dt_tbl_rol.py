@@ -7,47 +7,19 @@ from entidades.VwRol import VwRol
 
 class Dt_tbl_rol:
     def __init__(self):
-        pass
-    _dbCon = Conexion()
-    _con = None
-    _cursor = None
-    _sql = ""
-
-    def llenarCbxRol(self):
-        self._sql = "SELECT id_rol, rol FROM Seguridad.tbl_rol where estado<>3;"
-        try:
-            # abrimos la conexion & cursor
-            self._con = self._dbCon.getConnection()
-            self._cursor = self._dbCon.getCursor()
-            # ejecutamos la consulta
-            self._cursor.execute(self._sql)
-            # Obtenemos todos los registros de la consulta
-            registros = self._cursor.fetchall()
-            print("Numero total de registros: ", self._cursor.rowcount)
-            listaRol = []
-
-            for tr in registros:
-                trol = Tbl_rol(tr['id_rol'], tr['rol'])
-                listaRol.append(trol)
-            print('listaRol', listaRol)
-            return listaRol
-
-        except Exception as e:
-            print("Datos: Error llenarCbxRol()", e)
-        finally:
-            #self._dbCon.closeConnection()
-            pass
+        self._con = None
+        self._cursor = None
 
     def listarRol(self):
-        self._sql = "SELECT * FROM Seguridad.VwRol;"
+        listaRol = []
         try:
 
-            self._con = self._dbCon.getConnection()
-            self._cursor = self._dbCon.getCursor()
-            self._cursor.execute(self._sql)
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
+            sql = "SELECT * FROM Seguridad.VwRolEstado where estado <> 3;"
+            self._cursor.execute(sql)
 
             registros = self._cursor.fetchall()
-            listaRol = []
             for r in registros:
                 id = r['id_rol']
                 nombre = r['rol']
@@ -60,5 +32,77 @@ class Dt_tbl_rol:
             print("Datos: Error en listarRol", e)
 
         finally:
-            self._dbCon.closeConnection()
-            pass
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+
+    def agregarRol(self, rol_param):
+        resultado = False
+        try:
+            con = Conexion.getConnection()
+            cursor = Conexion.getCursor()
+            sql = f"INSERT INTO Seguridad.tbl_rol (rol, estado) values ('{rol_param.rol}', {rol_param.estado});"
+            if cursor.execute(sql) > 0:
+                resultado = True
+            con.commit()
+        except Exception as e:
+            print(f"Error al insertar rol {e}")
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return resultado
+
+    def eliminarRol(self, rol_param):
+        resultado = False
+        try:
+            con = Conexion.getConnection()
+            cursor = Conexion.getCursor()
+            sql = f"UPDATE Seguridad.tbl_rol SET estado = 3 where id_rol = {rol_param.id_rol};"
+            if cursor.execute(sql) > 0:
+                resultado = True
+            con.commit()
+        except Exception as e:
+            print(f"Error al eliminar rol {e}")
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return resultado
+
+    def buscarRol(self, rol_param):
+        listaRol = []
+        try:
+            con = Conexion.getConnection()
+            cursor = Conexion.getCursor()
+            sql = f" SELECT * from Seguridad.VwRolEstado where rol like '%{rol_param.rol}%' and estado <> 3;"
+
+            resultados = cursor.execute(sql)
+            print(f"Resultados: {resultados}")
+
+            registros = cursor.fetchall()
+            for r in registros:
+                id = r['id_rol']
+                nombre = r['rol']
+                vista = VwRol(id, nombre)
+                listaRol.append(vista)
+        except Exception as e:
+            print(f"Error en la busqueda: {e}")
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return listaRol
+
+    def editarRol(self, rol_param):
+        resultado = False
+        try:
+            con = Conexion.getConnection()
+            cursor = Conexion.getCursor()
+            sql = f"UPDATE Seguridad.tbl_rol SET rol = '{rol_param.rol}' where id_rol = {rol_param.id_rol};"
+            if cursor.execute(sql) > 0:
+                resultado = True
+            con.commit()
+        except Exception as e:
+            print(f"Error al editar rol {e}")
+        finally:
+            Conexion.closeCursor()
+            Conexion.closeConnection()
+            return resultado
+

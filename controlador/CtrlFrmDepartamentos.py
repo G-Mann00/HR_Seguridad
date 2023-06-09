@@ -4,16 +4,17 @@ from PyQt5.QtWidgets import QMessageBox, QApplication
 from datos.Dt_Location import Dt_Location
 from vistas.FrmDepartamentos import Ui_FrmDepartamentos
 from datos.Dt_Departamentos import Dt_Departamentos
-from datos.Dt_Region import Dt_Region
 from entidades.Departments import Departments
+from negocios.Ng_Departamento import Ng_Departamentos
 
 class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
     dDepartamento = Dt_Departamentos()
     departamento = Departments()
     dCiudad = Dt_Location()
+    ngDepartamento = Ng_Departamentos()
 
     def __init__(self):
-        self.listaRegion = [] #guardar la lista de regiones(incluido su id) y poder usarlo en guardar, editar.
+        self.listaRegion = []
         super().__init__()
         self.ui = Ui_FrmDepartamentos()
         self.ui.setupUi(self)
@@ -26,7 +27,7 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         self.ui.tw_registroDepartamentos.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.ui.btn_limpiar.clicked.connect(self.limpiarDatos)
         self.ui.tw_registroDepartamentos.clicked.connect(self.filaSeleccionada)
-        QApplication.instance().focusChanged.connect(self.validarIdentificador)
+        #QApplication.instance().focusChanged.connect(self.validarIdentificador)
         self.ui.btn_editar.clicked.connect(self.btnEditar)
         self.ui.btn_eliminar.clicked.connect(self.btnEliminar)
         self.ui.btn_buscar.clicked.connect(self.btnBuscar)
@@ -36,18 +37,6 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
     def refresh(self):
         if self.ui.le_buscador.text() == "":
             self.cargarDatosTabla()
-
-    def validarIdentificador(self,old_widget, now_widget):
-
-        if self.ui.le_identificador is old_widget:
-
-            if self.ui.le_identificador.text() == "":
-                return
-
-            if len(self.ui.le_identificador.text()) > 2:
-                QMessageBox.warning(self, "Error", "El identificador no puede tener más de 2 caracteres")
-                #self.ui.le_identificador.setFocus()
-                return
 
     def filaSeleccionada(self):
         if len(self.ui.tw_registroDepartamentos.selectedItems()) > 0:
@@ -92,26 +81,21 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         self.ui.le_identificador.setEnabled(True)
 
     def btnAgregar(self):
-        if self.ui.le_nombre.text() == "" or self.ui.cbx_localizacion.currentIndex() == 0 or self.ui.le_identificador.text() == "":
-            QMessageBox.warning(self, "Error", "Ingrese todos los datos")
+        if self.ui.le_nombre.text() == "" and self.ui.cbx_localizacion.currentIndex() == 0:
+            QMessageBox.warning(self, "Error", "Ingrese los datos completos")
             return
-
 
         dDepartamento = Dt_Departamentos()
         d = Departments()
         d.department_id = self.ui.le_identificador.text()
         d.department_name = self.ui.le_nombre.text()
         index = self.ui.cbx_localizacion.currentIndex()
-        d.region_id = self.listaRegion[self.ui.cbx_localizacion.currentIndex() - 1].region_id
-
-        if dDepartamento.validarIdUnico(d):
-            QMessageBox.information(self, "Érror", "Existe un registro con el mismo identificador")
-            return
+        d.city = self.listaCiudad[index - 1].city
 
         if not dDepartamento.insertarDepartamento(d):
-            QMessageBox.information(self, "Érror", "No se pudo guardar el registro")
+            QMessageBox.warning(self, "Érror", "No se pudo agregar el registro")
             return
-        QMessageBox.information(self, "Éxito", "Se guardó el registro correctamente")
+        QMessageBox.information(self, "Éxito", "Se agregó el registro correctamente")
         self.limpiarDatos()
         self.cargarDatosTabla()
 
@@ -122,8 +106,8 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         return -1
 
     def btnEditar(self):
-        if self.ui.le_nombre.text() == "" or self.ui.cbx_localizacion.currentIndex() == 0 or self.ui.le_identificador.text() == "":
-            QMessageBox.warning(self, "Error", "Ingrese todos los datos")
+        if self.ui.le_identificador.text() == "":
+            QMessageBox.warning(self, "Error", "Ingrese el identificador")
             return
 
         dDepartamento = Dt_Departamentos()
@@ -131,10 +115,15 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         d.department_id = self.ui.le_identificador.text()
         d.department_name = self.ui.le_nombre.text()
         index = self.ui.cbx_localizacion.currentIndex()
-        d.region_id = self.listaRegion[self.ui.cbx_localizacion.currentIndex() - 1].region_id
+        d.city = self.listaCiudad[index - 1].city
+
+        alert = QMessageBox.warning(self, 'Alerta', f"¿Está seguro de editar el departamento {d.department_name}?",
+                                    QMessageBox.Yes | QMessageBox.No)
+        if alert == QMessageBox.No:
+            return
 
         if not dDepartamento.actualizarDepartamento(d):
-            QMessageBox.information(self, "Érror", "No se pudo editar el registro")
+            QMessageBox.warning(self, "Érror", "No se pudo editar el registro")
             return
         QMessageBox.information(self, "Éxito", "Se editó el registro correctamente")
         self.limpiarDatos()
@@ -163,22 +152,22 @@ class CtrlFrmDepartamentos(QtWidgets.QMainWindow):
         self.cargarDatosTabla()
 
     def btnBuscar(self):
-        if self.ui.le_identificador.text() == "":
-            QMessageBox.warning(self, "Error", "Ingrese el identificador")
+        if self.ui.le_buscador.text() == "":
+            QMessageBox.warning(self, "Error", "Ingrese el nombre del departamento")
             return
 
-        dDepartamento = Dt_Departamentos()
-        d = Departments()
-        d.department_id = self.ui.le_identificador.text()
-        d.department_name = self.ui.le_nombre.text()
+        self.departamento.department_name = self.ui.le_buscador.text()
+        listaDepartamento = self.dDepartamento.buscarDepartamento(self.departamento)
 
-        if not dDepartamento.buscarDepartamento(d):
-            QMessageBox.warning(self, "Érror", "No se pudo encontrar el registro")
-            return
-        QMessageBox.information(self, "Éxito", "Se encontró el registro correctamente")
-        self.limpiarDatos()
-        self.cargarDatosTabla()
-
+        self.ui.tw_registroDepartamentos.setRowCount(len(listaDepartamento))
+        self.ui.tw_registroDepartamentos.setColumnCount(3)
+        self.ui.tw_registroDepartamentos.verticalHeader().setVisible(False)
+        row = 0
+        for d in listaDepartamento:
+            self.ui.tw_registroDepartamentos.setItem(row, 0, QtWidgets.QTableWidgetItem(str(d.id_department)))
+            self.ui.tw_registroDepartamentos.setItem(row, 1, QtWidgets.QTableWidgetItem(d.department_name))
+            self.ui.tw_registroDepartamentos.setItem(row, 2, QtWidgets.QTableWidgetItem(str(d.city)))
+            row += 1
 
 
 

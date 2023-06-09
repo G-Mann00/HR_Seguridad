@@ -6,24 +6,17 @@ from entidades.VwGestionUsuario import VwGestionUsuario
 
 
 class Dt_tbl_user:
+
     def __init__(self):
-        pass
-    _dbCon = Conexion()
-    _con = None
-    _cursor = None
-    #_cursor = _con.cursor()
-    _sql = ""
-    _result = None
+        self._con = None
+        self._cursor = None
 
     def listUsuarios(self):
         self._sql = "SELECT * FROM Seguridad.tbl_user where estado<>3;"
         try:
-            # abrimos la conexion & cursor
-            self._con = self._dbCon.getConnection()
-            self._cursor = self._dbCon.getCursor()
-            # ejecutamos la consulta
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
             self._cursor.execute(self._sql)
-            # Obtenemos todos los registros de la consulta
             registros = self._cursor.fetchall()
             print("Numero total de registros: ", self._cursor.rowcount)
             listaUsuario = []
@@ -61,14 +54,11 @@ class Dt_tbl_user:
             pass
 
     def llenarCbxUser(self):
-        self._sql = "SELECT id_user, user FROM Seguridad.tbl_user Where estado<>3;"
+        self._sql = "SELECT id_user, user FROM Seguridad.tbl_user Where estado <> 3;"
         try:
-            # abrimos la conexion & cursor
-            self._con = self._dbCon.getConnection()
-            self._cursor = self._dbCon.getCursor()
-            # ejecutamos la consulta
+            self._con = Conexion.getConnection()
+            self._cursor = Conexion.getCursor()
             self._cursor.execute(self._sql)
-            # Obtenemos todos los registros de la consulta
             registros = self._cursor.fetchall()
             print("Numero total de registros: ", self._cursor.rowcount)
             listaUsuario = []
@@ -107,50 +97,21 @@ class Dt_tbl_user:
             #self._dbCon.closeConnection()
             pass
 
-    def buscarPorUsuario(self, cadena):
-        listaUsers = []
+    def buscarUsuario(self, texto):
+        self._sql = "SELECT * FROM Seguridad.tbl_user WHERE user LIKE '%{}%' and estado <> 3;".format(texto)
         try:
-            self._con = Conexion.getConnection()
-            self._cursor = self._con.cursor()
-            sql = f"SELECT id_user, user, nombres, pwd, apellidos, email FROM Seguridad.tbl_user WHERE user like '%{cadena}%';"
-            self._cursor.execute(sql)
+            self._cursor.execute(self._sql)
             registros = self._cursor.fetchall()
-            for r in registros:
-                id = r['id_user']
-                nombre_usuario = r['user']
-                pwd = r['pwd']
-                nombres = r['nombres']
-                apellidos = r['apellidos']
-                email = r['email']
-                user = VwGestionUsuario(id, nombre_usuario, pwd, nombres, apellidos, email)
-                listaUsers.append(user)
-            return listaUsers
+            listaUsuario = []
+
+            for tu in registros:
+                tus = tbl_user(tu['id_user'], tu['user'], tu['pwd'], tu['nombres'],
+                               tu['apellidos'], tu['email'], tu['pwd_temp'], tu['estado'])
+                listaUsuario.append(tus)
+            return listaUsuario
         except Exception as e:
-            print("Datos: Error en buscarPorUsuario", e)
+            print("Datos: Error buscarUsuario()", e)
         finally:
             Conexion.closeCursor()
             Conexion.closeConnection()
 
-    def buscarPorNombre(self, cadena):
-        listaUsers = []
-        try:
-            self._con = Conexion.getConnection()
-            self._cursor = self._con.cursor()
-            sql = f"SELECT id_user, user, nombres, pwd, apellidos, email FROM Seguridad.tbl_user WHERE user like '%{cadena}%';"
-            self._cursor.execute(sql)
-            registros = self._cursor.fetchall()
-            for r in registros:
-                id = r['id_user']
-                nombre_usuario = r['user']
-                pwd = r['pwd']
-                nombres = r['nombres']
-                apellidos = r['apellidos']
-                email = r['email']
-                user= VwGestionUsuario(id, nombre_usuario, pwd, nombres, apellidos, email)
-                listaUsers.append(user)
-            return listaUsers
-        except Exception as e:
-            print("Datos: Error en buscarPorNombre", e)
-        finally:
-            Conexion.closeCursor()
-            Conexion.closeConnection()
